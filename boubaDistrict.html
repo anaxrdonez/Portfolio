@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouba District</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tu propio CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Estilos personalizados adicionales */
+        .hero {
+            position: relative;
+            height: 50vh;
+            background-color: #212529d7; 
+            color: white;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Filtro oscuro para resaltar el texto */
+            z-index: 1;
+        }
+
+        .hero .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bouba District</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#concept">Concepto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#story">Historia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#novedades">Novedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="hero text-center text-light d-flex align-items-center justify-content-center" id="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-1">Bouba District</h1>
+            <p class="lead">La boyband que salva al mundo con el poder de la música.</p>
+            <a href="#about" class="btn btn-primary btn-lg">Descubre más</a>
+            <a href="index.html" class="btn btn-primary btn-lg">Volver al inicio</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container text-center">
+            <h2 class="display-4">Introducción</h2>
+            <p class="lead">Bouba District es un juego competitivo musical que combina mecánicas de acción y ritmo. Enfréntate a hordas de criaturas adorables pero peligrosas siguiendo el ritmo de la música y realizando secuencias de teclas precisas.</p>
+            <!-- Primera Carátula -->
+            <img src="Assets/boubaDistrict/Caratula.jpg" class="img-fluid rounded mt-4" alt="Carátula del juego">
+            <!-- Segunda Carátula -->
+            <div class="mt-4">
+                <img src="Assets/boubaDistrict/Caratula2.png" class="img-fluid rounded" alt="Carátula 2">
+                <p class="mt-2 lead"><strong>¡Qué ritmo llevan nuestros chicos!</strong></p>
+            </div>
+            <!-- Botón de Itch.io -->
+            <a href="https://syncstudios-games.itch.io/bouba-district" target="_blank" class="btn btn-primary btn-lg mt-4">Jugar en Itch.io</a>
+        </div>
+    </section>
+    
+    
+
+    <!-- Concept Section -->
+    <section class="py-5 bg-light" id="concept">
+        <div class="container text-center">
+            <h2 class="display-4">Concepto</h2>
+            <p class="lead">Bouba District mezcla mecánicas de tower defense y juegos de ritmo. El objetivo principal es evitar que las criaturas invadan la ciudad, ingresando secuencias de teclas siguiendo el ritmo de la música.</p>
+        </div>
+    </section>
+
+    <!-- Story and Enemies Section -->
+    <section class="py-5" id="story">
+        <div class="container text-center">
+            <h2 class="display-4">Historia y Enemigos</h2>
+            <p class="lead">Un experimento fallido ha dado origen a los "Boubas", unas criaturas mucosas que quieren conquistar todo a su paso. Kiki, el joven prodigio de la música, deberá usar sus habilidades rítmicas para enfrentarse a estos mutantes y salvar la ciudad.</p>
+
+            <div class="row justify-content-center">
+                <!-- Bouba 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <img src="Assets/boubaDistrict/Bouba1.png" class="card-img-top img-fluid" alt="Bouba 1">
+                        <div class="card-body">
+                            <h3 class="card-title">Bouba 1</h3>
+                            <p class="card-text">Este bouba es una criatura gelatinosa de apariencia adorable, pero no te dejes engañar por su aspecto blando. Su cuerpo rosado y brillante lo hace parecer inofensivo. Aunque parece lento y despreocupado,  tiene la capacidad de deslizarse ágilmente por el terreno, siendo un enemigo sorprendente en los duelos de ritmo.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bouba 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <img src="Assets/boubaDistrict/Bouba2.png" class="card-img-top img-fluid" alt="Bouba 2">
+                        <div class="card-body">
+                            <h3 class="card-title">Bouba 2</h3>
+                            <p class="card-text">Este bouba azul es una criatura tímida y extremadamente asustadiza. Su forma alargada y su expresión de constante preocupación lo delatan como el más frágil del grupo. Aunque no busca confrontaciones, cuando se siente acorralado, lanza lágrimas viscosas que utiliza como su principal método de defensa. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bouba 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <img src="Assets/boubaDistrict/Bouba3.png" class="card-img-top img-fluid" alt="Bouba 3">
+                        <div class="card-body">
+                            <h3 class="card-title">Bouba 3</h3>
+                            <p class="card-text">Este bouba es una criatura gelatinosa de un vibrante verde esmeralda que parece adorable a simple vista. Su cuerpo, blando y brillante, da la impresión de ser inofensivo, pero no te dejes engañar. Aunque aparenta ser lento y despreocupado, tiene la sorprendente habilidad de deslizarse ágilmente por el terreno, convirtiéndose en un enemigo astuto durante los duelos de ritmo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <!-- Bouba 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <img src="Assets/boubaDistrict/Bouba4.png" class="card-img-top img-fluid" alt="Bouba 4">
+                        <div class="card-body">
+                            <h3 class="card-title">Bouba 4</h3>
+                            <p class="card-text">Este bouba amarillo es conocido por su torpeza y falta de inteligencia, pero tiene un talento único que lo compensa: la capacidad de crear burbujas gigantes que flotan en el aire. Aunque su apariencia simple y sus ojos desorientados lo hacen parecer inofensivo, sus burbujas pueden ser un obstáculo inesperado, atrapando o distrayendo a sus enemigos. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bouba 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <img src="Assets/boubaDistrict/Bouba5.png" class="card-img-top img-fluid" alt="Bouba 5">
+                        <div class="card-body">
+                            <h3 class="card-title">Bouba 5</h3>
+                            <p class="card-text">Este bouba azul es una criatura amorfa y altamente volátil. Su cuerpo puede cambiar de tamaño y contorsionarse a voluntad, lo que le permite esquivar ataques con facilidad o crecer para intimidar a sus oponentes. Lo que lo hace verdaderamente peligroso es la energía eléctrica que contiene, chisporroteando constantemente por su gelatinoso cuerpo. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bouba 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <img src="Assets/boubaDistrict/Bouba6.png" class="card-img-top img-fluid" alt="Bouba 6">
+                        <div class="card-body">
+                            <h3 class="card-title">Bouba 6</h3>
+                            <p class="card-text">Este bouba amarillo y cuadrado se distingue por su extraña estructura geométrica y su intimidante fila de dientes afilados. Aunque parece rígido por su forma cuadrada, su cuerpo sigue siendo gelatinoso, permitiéndole moverse con agilidad cuando es necesario. Sus dientes sobresalientes son su principal arma, usados tanto para morder como para defenderse. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section class="py-5 bg-light" id="characters">
+        <div class="container text-center">
+            <h2 class="display-4">Personajes Principales</h2>
+            <p class="lead">Conoce a los miembros de la boyband que lucha contra la plaga de los Boubas.</p>
+            <div class="row justify-content-center">
+                <!-- Kiki Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <img src="Assets/boubaDistrict/kiki.png" class="card-img-top img-fluid" alt="Kiki">
+                        <div class="card-body">
+                            <h3 class="card-title">Kiki - El Vocalista</h3>
+                            <p class="card-text">Kiki es el alma de la banda, con una voz capaz de levantar multitudes. Es un líder natural, carismático y lleno de energía. Con su actitud desafiante y su estilo audaz, Kiki usa su voz para derrotar a los Boubas en intensos duelos musicales.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kike Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <img src="Assets/boubaDistrict/kike.png" class="card-img-top img-fluid" alt="Kike">
+                        <div class="card-body">
+                            <h3 class="card-title">Kike - El Guitarrista</h3>
+                            <p class="card-text">Kike es el corazón rítmico de la banda, con un talento impresionante para la guitarra. Sus melodías son tan potentes que logran aturdir a los Boubas, dándole a la banda la ventaja en la batalla. Es un espíritu libre, siempre dispuesto a improvisar y darle un toque especial a cada actuación.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kiko Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <img src="Assets/boubaDistrict/kiko.png" class="card-img-top img-fluid" alt="Kiko">
+                        <div class="card-body">
+                            <h3 class="card-title">Kiko - El Baterista</h3>
+                            <p class="card-text">Kiko es el motor de la banda, con un ritmo tan poderoso que hace vibrar el suelo. Su batería es más que un instrumento; es un arma contra la plaga de Boubas. Siempre está listo para marcar el tempo en la batalla, manteniendo a la banda unida en los momentos más difíciles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+   <!-- Gallery Section -->
+    <section class="py-5" id="gallery">
+        <div class="container text-center">
+            <h2 class="display-4">Galería</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="Assets/boubaDistrict/captura1.jpg" class="img-fluid rounded" alt="Captura 1">
+                </div>
+                <div class="col-md-4">
+                    <img src="Assets/boubaDistrict/captura2.jpg" class="img-fluid rounded" alt="Captura 2">
+                </div>
+                <div class="col-md-4">
+                    <img src="Assets/boubaDistrict/captura3.jpg" class="img-fluid rounded" alt="Captura 3">
+                </div>
+            </div>
+
+            <!-- Screenshots Gameplay -->
+            <div class="mt-5">
+                <h3 class="display-5">Screenshots Gameplay</h3>
+                <div class="row">
+                    <!-- Primera fila -->
+                    <div class="col-md-6 mb-4">
+                        <img src="Assets/boubaDistrict/1.png" class="img-fluid rounded shadow" alt="Screenshot Gameplay 1">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <img src="Assets/boubaDistrict/2.png" class="img-fluid rounded shadow" alt="Screenshot Gameplay 2">
+                    </div>
+                    <!-- Segunda fila -->
+                    <div class="col-md-6 mb-4">
+                        <img src="assets/boubaDistrict/3.png" class="img-fluid rounded shadow" alt="Screenshot Gameplay 3">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <img src="Assets/boubaDistrict/4.png" class="img-fluid rounded shadow" alt="Screenshot Gameplay 4">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Animations Section -->
+    <section class="py-5 bg-light" id="animations">
+        <div class="container text-center">
+            <h2 class="display-4">Animaciones</h2>
+            <p class="lead">Disfruta de nuestros divertidos GIFs de Kiki.</p>
+            <div class="row justify-content-center">
+                <!-- Dance GIF -->
+                <div class="col-md-3 mb-4">
+                    <h3>Dance</h3>
+                    <img src="Assets/boubaDistrict/dance.gif" class="img-fluid rounded" alt="Dance Animation">
+                </div>
+                <!-- Punch GIF -->
+                <div class="col-md-3 mb-4">
+                    <h3>Punch</h3>
+                    <img src="Assets/boubaDistrict/punch.gif" class="img-fluid rounded" alt="Punch Animation">
+                </div>
+                <!-- Kick GIF -->
+                <div class="col-md-3 mb-4">
+                    <h3>Kick</h3>
+                    <img src="Assets/boubaDistrict/kick.gif" class="img-fluid rounded" alt="Kick Animation">
+                </div>
+                <!-- Samba GIF -->
+                <div class="col-md-3 mb-4">
+                    <h3>Samba</h3>
+                    <img src="Assets/boubaDistrict/samba.gif" class="img-fluid rounded" alt="Samba Animation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Videos Section -->
+    <section class="py-5" id="videos">
+        <div class="container text-center">
+            <h2 class="display-4">Videos del Gameplay</h2>
+            <p class="lead">Explora un vistazo al emocionante mundo de Bouba District a través de nuestros videos.</p>
+            <div class="mt-4">
+                <!-- Video: Inicio -->
+                <div class="mb-5">
+                    <h3>Inicio del Juego</h3>
+                    <div class="ratio ratio-16x9">
+                        <video controls class="rounded shadow">
+                            <source src="Assets/boubaDistrict/Inicio.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                    <p class="mt-3">Conoce la introducción del juego y sumérgete en la emocionante historia de Bouba District.</p>
+                </div>
+                <!-- Video: Tutorial -->
+                <div class="mb-5">
+                    <h3>Tutorial</h3>
+                    <div class="ratio ratio-16x9">
+                        <video controls class="rounded shadow">
+                            <source src="Assets/boubaDistrict/Tutorial.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                    <p class="mt-3">Aprende a jugar y domina las mecánicas de ritmo con nuestro tutorial interactivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Novedades Section -->
+    <section class="py-5 bg-light" id="novedades">
+        <div class="container text-center">
+            <h2 class="display-4">Novedades</h2>
+            <p class="lead">¡Descubre un adelanto de los escenarios y personajes que estarán disponibles próximamente en el juego! <strong>¡Estad atentos!</strong></p>
+            <div class="row text-center mt-4">
+                <!-- Personaje: Kika -->
+                <div class="col-md-6 mb-4">
+                    <img src="Assets/boubaDistrict/Kika.png" class="img-fluid rounded shadow" alt="Personaje Kika">
+                    <h3 class="mt-2">Kika</h3>
+                    <p>Una nueva banda llega a Bouba District. El dúo de Kika y Kuki...Listas para la batalla. Kika traerá energía y nuevas habilidades...</p>
+                </div>
+                <!-- Nuevo Escenario -->
+                <div class="col-md-6 mb-4">
+                    <img src="Assets/boubaDistrict/nuevoEscenario.png" class="img-fluid rounded shadow" alt="Nuevo Escenario">
+                    <h3 class="mt-2">Nuevo Escenario</h3>
+                    <p>Un colorido y desafiante escenario que estará disponible en futuras actualizaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container text-center">
+            <h2 class="display-4">Contáctanos</h2>
+            <p class="lead">¿Tienes alguna pregunta o sugerencia? ¡Nos encantaría saber de ti!</p>
+            <a href="mailto:syncstudiosgames@gmail.com" class="btn btn-primary btn-lg">Envíanos un Correo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3 text-center">
+        <div class="container">
+            <p class="mb-0">© 2024 Bouba District - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

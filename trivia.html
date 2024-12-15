@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Cultura Pop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tu propio CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Estilos personalizados adicionales */
+        .hero {
+            position: relative;
+            height: 50vh;
+            background-color: #212529d7; 
+            color: white;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Filtro oscuro para resaltar el texto */
+            z-index: 1;
+        }
+
+        .hero .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Ajuste para video en formato 9:16 */
+        .video-container {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 9 / 16;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Trivia Cultura Pop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#video">Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#apk">Descargar APK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center text-light d-flex align-items-center justify-content-center" id="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-1">Trivia Cultura Pop</h1>
+            <p class="lead">Demuestra tus conocimientos en cultura pop.</p>
+            <a href="#about" class="btn btn-primary btn-lg">Descubre más</a>
+            <a href="index.html" class="btn btn-primary btn-lg">Volver al inicio</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container text-center">
+            <h2 class="display-4">Introducción</h2>
+            <p class="lead">Trivia Cultura Pop es una aplicación de preguntas y respuestas donde podrás demostrar cuánto sabes sobre cultura popular. Desde música, películas hasta videojuegos, compite con tus amigos y descubre quién es el verdadero experto.</p>
+            <img src="assets/trivia/triviaCaratula.jpg" class="img-fluid rounded mt-4" alt="Carátula del juego">
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-5 bg-light" id="video">
+        <div class="container text-center">
+            <h2 class="display-4">Mira el video de la aplicación</h2>
+            <p class="lead">Conoce la interfaz y cómo funciona Trivia Cultura Pop.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="assets/trivia/video.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- APK Download Section -->
+    <section class="py-5" id="apk">
+        <div class="container text-center">
+            <h2 class="display-4">Descarga la aplicación</h2>
+            <p class="lead">Haz clic en el botón de abajo para descargar Trivia Cultura Pop y empieza a jugar.</p>
+            <a href="TriviaCulturaPop.apk" class="btn btn-success btn-lg" download="TriviaCulturaPop.apk">Descargar APK</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container text-center">
+            <h2 class="display-4">Contáctanos</h2>
+            <p class="lead">¿Tienes alguna pregunta o sugerencia? ¡Nos encantaría saber de ti!</p>
+            <a href="mailto:syncstudiosgames@gmail.com" class="btn btn-primary btn-lg">Envíanos un Correo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3 text-center">
+        <div class="container">
+            <p class="mb-0">© 2024 Trivia Cultura Pop - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

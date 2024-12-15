@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tile Rush - Sync Studios</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados */
+        body {
+            background-color: #f5fbff; /* Fondo azul claro */
+            color: #333;
+        }
+
+        .hero {
+            height: 50vh;
+            background: linear-gradient(to right, #1e88e5, #aad4f7); /* Tonos azulados */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .section-title {
+            color: #1e88e5; /* Azul oscuro */
+        }
+
+        .description {
+            line-height: 1.6;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #1e88e5; /* Azul oscuro */
+        }
+
+        .btn-primary {
+            background-color: #1e88e5; /* Azul personalizado */
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #1565c0; /* Azul más oscuro al pasar el mouse */
+        }
+
+        footer {
+            background-color: #1565c0; /* Azul footer */
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sync Studios</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div>
+            <h1>Tile Rush</h1>
+            <p>¡El clásico 2048 reinventado con nuevas mecánicas y más diversión!</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="container py-5">
+        <h2 class="section-title text-center">¿Qué es Tile Rush?</h2>
+        <p class="description text-center mt-4">
+            <strong>Tile Rush</strong> es un emocionante juego de lógica inspirado en el popular 2048, pero con innovadoras mecánicas que lo hacen aún más entretenido. Las fichas aparecen una a una en la parte superior del tablero y debes elegir en qué columna dejarlas caer. Luego, combina las fichas deslizando como en el 2048 tradicional, pero ahora con la influencia de la <strong>gravedad</strong> y un <strong>contador de movimientos</strong> que añade un nuevo nivel de estrategia.
+        </p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container py-5">
+        <h2 class="section-title text-center">Características Principales</h2>
+        <div class="row text-center mt-4">
+            <div class="col-md-4 mb-4">
+                <div>
+                    <div class="feature-icon mb-3">🕹️</div>
+                    <h3>Gravedad Integrada</h3>
+                    <p>Las fichas caen desde arriba, lo que añade una nueva dimensión al clásico juego de combinar números.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div>
+                    <div class="feature-icon mb-3">🎨</div>
+                    <h3>Cambio de Estilo</h3>
+                    <p>Personaliza el aspecto del juego con diferentes temas y estilos visuales.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div>
+                    <div class="feature-icon mb-3">⏳</div>
+                    <h3>Contador de Movimientos</h3>
+                    <p>Mide cada movimiento y planifica estratégicamente para alcanzar la puntuación más alta posible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Screenshots Section -->
+    <section class="container py-5">
+        <h2 class="section-title text-center">Pantallas</h2>
+        <div class="row text-center mt-4">
+            <!-- Imagen 1 -->
+            <div class="col-md-4 mb-4">
+                <img src="assets/tileRush/tr_1.png" class="img-fluid rounded shadow" alt="Pantalla 1">
+            </div>
+            <!-- Imagen 2 -->
+            <div class="col-md-4 mb-4">
+                <img src="assets/tileRush/tr_2.png" class="img-fluid rounded shadow" alt="Pantalla 2">
+            </div>
+            <!-- Imagen 2.2 -->
+            <div class="col-md-4 mb-4">
+                <img src="assets/tileRush/tl_2.2.png" class="img-fluid rounded shadow" alt="Pantalla 2.2">
+            </div>
+            <!-- Imagen 3 -->
+            <div class="col-md-4 mb-4">
+                <img src="assets/tileRush/tr_3.png" class="img-fluid rounded shadow" alt="Pantalla 3">
+            </div>
+            <!-- Imagen 4 -->
+            <div class="col-md-4 mb-4">
+                <img src="assets/tileRush/tr_4.png" class="img-fluid rounded shadow" alt="Pantalla 4">
+            </div>
+            <!-- Imagen 5 -->
+            <div class="col-md-4 mb-4">
+                <img src="assets/tileRush/tr_5.png" class="img-fluid rounded shadow" alt="Pantalla 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section class="container py-5">
+        <h2 class="section-title text-center">¿Cómo se Juega?</h2>
+        <p class="description mt-4">
+            Al inicio de cada turno, una nueva ficha aparecerá en la parte superior del tablero. Debes seleccionar la columna en la que deseas que caiga. Una vez en el tablero, puedes deslizar las fichas en las cuatro direcciones para combinar aquellas con el mismo número, al igual que en el 2048 clásico. ¡Pero ten cuidado! El <strong>contador de movimientos</strong> está activo, así que cada decisión cuenta.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container text-center py-5">
+        <h2 class="section-title">¡Comparte tus Ideas!</h2>
+        <p class="description">Estamos en pleno desarrollo de <strong>Tile Rush</strong> y nos encantaría escuchar tus sugerencias o comentarios. Tu retroalimentación es muy valiosa para nosotros.</p>
+        <a href="mailto:syncstudiosgames@gmail.com" class="btn btn-primary mt-3">Envíanos un correo</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 text-center">
+        <div class="container">
+            <p class="mb-0">© 2024 Sync Studios - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
