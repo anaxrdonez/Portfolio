@@ -243,3 +243,62 @@ footer {
     padding: 20px;
     font-size: 0.9rem;
 }
+
+#mini-game {
+    text-align: center;
+    background-color: #f4f4f8;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#clickButton {
+    width: 200px;
+    height: 60px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#game, #result {
+    margin-top: 20px;
+}
+#game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#score-display {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0095DD;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#arkanoid-game .donation-section {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+#arkanoid-game .donation-section .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
