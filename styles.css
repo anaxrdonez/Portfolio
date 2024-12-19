@@ -302,3 +302,10 @@ footer {
     padding: 10px 20px;
     border-radius: 5px;
 }
+
+#arkanoidCanvas {
+    width: 100%; /* Ajusta automáticamente al ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Elimina espacios blancos alrededor */
+    border: 1px solid #000;
+}

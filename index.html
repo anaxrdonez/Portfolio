@@ -168,12 +168,14 @@
             Un pequeño ejemplo del juego que más veces he recreado en diferentes lenguajes durante la carrera. 
             ¡Disfruta este clásico que nunca pasa de moda!
         </p>
+        <div id="game-container" style="position: relative; width: 100%; max-width: 480px; margin: auto;">
+            <canvas id="arkanoidCanvas"></canvas>
+        </div>
         <div id="game-controls" class="mb-3">
             <button id="startGameButton" class="btn btn-primary">¡Comenzar Juego!</button>
             <button id="restartGameButton" class="btn btn-secondary" style="display: none;">Volver a Jugar</button>
         </div>
         <div id="score-display" class="mb-3">Puntuación: 0</div>
-        <canvas id="arkanoidCanvas" width="480" height="320" style="border: 1px solid #000;"></canvas>
         <div class="donation-section mt-4">
             <p>¿Te divirtió el juego? Ayúdame a mantener el tanque de cafeína lleno. ¡Los desarrolladores también necesitamos combustible! ☕🔋🕹️</p>
             <a href="https://www.paypal.com/donate?business=anaordonezgragera@gmail.com&currency_code=EUR&amount=0.50" 
@@ -182,7 +184,7 @@
             </a>
         </div>
     </section>
-   
+    
     
     
     <!-- Enlace al archivo game.js -->

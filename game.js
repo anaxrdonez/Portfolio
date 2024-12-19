@@ -10,19 +10,19 @@ let ballX = canvas.width / 2;
 let ballY = canvas.height - 30;
 let ballDX = 2;
 let ballDY = -2;
-const ballRadius = 10;
+let ballRadius = 10;
 
-const paddleHeight = 10;
-const paddleWidth = 75;
+let paddleHeight = 10;
+let paddleWidth = 75;
 let paddleX = (canvas.width - paddleWidth) / 2;
 
 const brickRowCount = 3;
 const brickColumnCount = 5;
-const brickWidth = 75;
-const brickHeight = 20;
-const brickPadding = 10;
-const brickOffsetTop = 30;
-const brickOffsetLeft = 30;
+let brickWidth = 75;
+let brickHeight = 20;
+let brickPadding = 10;
+let brickOffsetTop = 30;
+let brickOffsetLeft = 30;
 
 const bricks = [];
 for (let c = 0; c < brickColumnCount; c++) {
@@ -36,6 +36,50 @@ let score = 0;
 let gameInterval = null;
 let isGameRunning = false;
 
+// Ajustar el canvas al tamaño de la pantalla
+function resizeCanvas() {
+    const container = document.getElementById("game-container");
+    canvas.width = container.offsetWidth;
+    canvas.height = container.offsetWidth * 0.67; // Proporción 3:2
+    scaleGameElements();
+}
+
+// Escalar los elementos del juego
+function scaleGameElements() {
+    const scaleFactor = canvas.width / 480;
+    ballRadius = 10 * scaleFactor;
+    paddleWidth = 75 * scaleFactor;
+    paddleHeight = 10 * scaleFactor;
+    brickWidth = 75 * scaleFactor;
+    brickHeight = 20 * scaleFactor;
+    brickPadding = 10 * scaleFactor;
+    brickOffsetTop = 30 * scaleFactor;
+    brickOffsetLeft = 30 * scaleFactor;
+
+    // Actualizar las posiciones de los ladrillos
+    for (let c = 0; c < brickColumnCount; c++) {
+        for (let r = 0; r < brickRowCount; r++) {
+            bricks[c][r].x = c * (brickWidth + brickPadding) + brickOffsetLeft;
+            bricks[c][r].y = r * (brickHeight + brickPadding) + brickOffsetTop;
+        }
+    }
+}
+
+// Mover el paddle con el mouse
+canvas.addEventListener("mousemove", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    paddleX = Math.max(0, Math.min(mouseX - paddleWidth / 2, canvas.width - paddleWidth));
+});
+
+// Mover el paddle con el tacto
+canvas.addEventListener("touchmove", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const touchX = e.touches[0].clientX - rect.left;
+    paddleX = Math.max(0, Math.min(touchX - paddleWidth / 2, canvas.width - paddleWidth));
+    e.preventDefault();
+});
+
 // Dibuja la bola
 function drawBall() {
     ctx.beginPath();
@@ -45,7 +89,7 @@ function drawBall() {
     ctx.closePath();
 }
 
-// Dibuja la plataforma
+// Dibuja el paddle
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
@@ -59,12 +103,8 @@ function drawBricks() {
     for (let c = 0; c < brickColumnCount; c++) {
         for (let r = 0; r < brickRowCount; r++) {
             if (bricks[c][r].status === 1) {
-                const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
-                const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
-                bricks[c][r].x = brickX;
-                bricks[c][r].y = brickY;
                 ctx.beginPath();
-                ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                ctx.rect(bricks[c][r].x, bricks[c][r].y, brickWidth, brickHeight);
                 ctx.fillStyle = "#0095DD";
                 ctx.fill();
                 ctx.closePath();
@@ -175,23 +215,6 @@ function restartGame() {
     isGameRunning = true;
 }
 
-// Maneja el movimiento del paddle
-canvas.addEventListener("mousemove", (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    paddleX = Math.max(0, Math.min(mouseX - paddleWidth / 2, canvas.width - paddleWidth));
-});
-
-canvas.addEventListener("touchmove", (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const touchX = e.touches[0].clientX - rect.left;
-    paddleX = Math.max(0, Math.min(touchX - paddleWidth / 2, canvas.width - paddleWidth));
-});
-
-// Maneja los eventos de los botones
-startGameButton.addEventListener("click", startGame);
-restartGameButton.addEventListener("click", restartGame);
-
 // Dibuja todo
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -202,3 +225,11 @@ function draw() {
     collisionDetection();
     moveBall();
 }
+
+// Maneja el redimensionado
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+// Maneja los eventos de los botones
+startGameButton.addEventListener("click", startGame);
+restartGameButton.addEventListener("click", restartGame);
