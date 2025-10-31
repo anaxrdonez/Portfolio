@@ -93,7 +93,6 @@
         "skills.title": "Tecnologías y Lenguajes",
         "skills.subtitle": "Lenguajes, motores y herramientas que utilizo habitualmente",
         "timeline.title": "Mi recorrido",
-        "timeline.title": "Mi recorrido",
         "timeline.1.title": "2018–2020 · Bachillerato Tecnológico",
         "timeline.1.desc": "IES Rodríguez Moñino, Badajoz (ES).",
         "timeline.2.title": "2021–2025 · Grado en Diseño y Desarrollo de Videojuegos",
@@ -145,7 +144,6 @@
         "hero.words.3": "Creativity.",
         "skills.title": "Technologies & Languages",
         "skills.subtitle": "Languages, engines and tools I use regularly",
-        "timeline.title": "My journey",
         "timeline.title": "My journey",
         "timeline.1.title": "2018–2020 · Technological Baccalaureate",
         "timeline.1.desc": "IES Rodríguez Moñino, Badajoz (ES).",
@@ -226,5 +224,27 @@
   } catch(e) {
     var els = document.querySelectorAll('.timeline-item');
     els.forEach(function(el){ el.classList.add('in-view'); });
+  }
+})();
+
+/* Timeline reveal on scroll */
+(function() {
+  try {
+    var items = document.querySelectorAll('.tl-row'); // <-- antes: .timeline-item
+    if (!('IntersectionObserver' in window) || !items.length) {
+      items.forEach(function(el){ el.classList.add('in-view'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+    items.forEach(function(el){ io.observe(el); });
+  } catch(e) {
+    document.querySelectorAll('.tl-row').forEach(function(el){ el.classList.add('in-view'); });
   }
 })();

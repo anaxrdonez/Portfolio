@@ -1,5 +1,6 @@
 /* === Variables === */
 :root {
+  /* Base */
   --bg-dark: #0e0e10;
   --bg-light: #18181c;
   --accent: #6c63ff;
@@ -8,6 +9,12 @@
   --text-muted: #a1a1aa;
   --radius: 16px;
   --shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+
+  /* Timeline */
+  --tl-rail-w: 54px;                  /* ancho columna central */
+  --tl-line: 3px;                     /* grosor de la línea (ajusta aquí) */
+  --tl-line-color: rgba(255,255,255,.28);
+  --tl-dot: 16px;                     /* diámetro del punto */
 }
 
 /* === Base === */
@@ -18,9 +25,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-.section {
-  padding: 100px 20px;
-}
+.section { padding: 100px 20px; }
 
 /* === Navbar === */
 .custom-navbar {
@@ -32,9 +37,7 @@ body {
   color: var(--text-light);
   transition: 0.3s;
 }
-.custom-navbar .nav-link:hover {
-  color: var(--accent-light);
-}
+.custom-navbar .nav-link:hover { color: var(--accent-light); }
 
 /* === Hero === */
 .hero {
@@ -45,8 +48,9 @@ body {
 .background-gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(108,99,255,0.15), transparent 70%),
-              radial-gradient(circle at 70% 70%, rgba(255,0,150,0.15), transparent 70%);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(108,99,255,0.15), transparent 70%),
+    radial-gradient(circle at 70% 70%, rgba(255,0,150,0.15), transparent 70%);
   animation: pulseGradient 10s ease-in-out infinite alternate;
 }
 @keyframes pulseGradient {
@@ -59,27 +63,38 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Texto cambiante */
-.changing-text {
+/* ===== Texto animado bajo el nombre ===== */
+.hero-content { text-align: center; position: relative; z-index: 2; }
+
+.changing-text{
+  display: block;
+  position: relative;       /* referencia para los spans absolutos */
+  height: 1.6em;            /* alto fijo para evitar saltos */
+  line-height: 1.6em;
   font-size: 1.5rem;
-  font-weight: 400;
-  height: 2em;
-  overflow: hidden;
-  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #c5c8ff;
+  margin: 0 auto;           /* centrado */
 }
-.changing-text span {
+.changing-text span{
   position: absolute;
-  opacity: 0;
+  left: 0; right: 0;
   width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
   animation: rotateText 6s infinite;
 }
-.changing-text span:nth-child(1) { animation-delay: 0s; }
-.changing-text span:nth-child(2) { animation-delay: 2s; }
-.changing-text span:nth-child(3) { animation-delay: 4s; }
-
-@keyframes rotateText {
-  0%, 10% { opacity: 1; transform: translateY(0); }
-  30%, 100% { opacity: 0; transform: translateY(-100%); }
+.changing-text span:nth-child(1){ animation-delay: 0s; }
+.changing-text span:nth-child(2){ animation-delay: 2s; }
+.changing-text span:nth-child(3){ animation-delay: 4s; }
+@keyframes rotateText{
+  0%   { opacity: 0; transform: translateY(100%); }
+  5%   { opacity: 1; transform: translateY(0); }
+  30%  { opacity: 1; transform: translateY(0); }
+  35%  { opacity: 0; transform: translateY(-100%); }
+  100% { opacity: 0; transform: translateY(-100%); }
 }
 
 /* === Sobre mí === */
@@ -113,20 +128,10 @@ body {
   object-fit: cover;
   transition: transform 0.4s ease;
 }
-.project-card:hover img {
-  transform: scale(1.08);
-}
-.project-info {
-  padding: 20px;
-}
-.project-info h3 {
-  color: var(--accent-light);
-  margin-bottom: 10px;
-}
-.project-info p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
+.project-card:hover img { transform: scale(1.08); }
+.project-info { padding: 20px; }
+.project-info h3 { color: var(--accent-light); margin-bottom: 10px; }
+.project-info p { color: var(--text-muted); font-size: 0.95rem; }
 
 /* === Botones === */
 .btn-primary {
@@ -157,48 +162,6 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* ===== Texto animado bajo "Ana Ordóñez" — centrado y visible ===== */
-.hero-content{
-  text-align:center;
-  position:relative;
-  z-index:2;
-}
-
-.changing-text{
-  display:block;           /* ocupa ancho propio y permite margin:0 auto si lo usas */
-  position:relative;       /* referencia para los spans absolutos */
-  height:1.6em;            /* alto fijo para que no “salte” */
-  line-height:1.6em;
-  font-size:1.5rem;
-  font-weight:600;
-  letter-spacing:1px;
-  color:#c5c8ff;
-  margin:0 auto;           /* centrado */
-}
-
-.changing-text span{
-  position:absolute;
-  left:0; right:0;         /* centra horizontalmente */
-  width:100%;
-  text-align:center;
-  opacity:0;
-  transform:translateY(100%);
-  animation: rotateText 6s infinite;
-}
-
-/* turnos */
-.changing-text span:nth-child(1){ animation-delay:0s; }
-.changing-text span:nth-child(2){ animation-delay:2s; }
-.changing-text span:nth-child(3){ animation-delay:4s; }
-
-@keyframes rotateText{
-  0%   { opacity:0; transform:translateY(100%); }
-  5%   { opacity:1; transform:translateY(0); }
-  30%  { opacity:1; transform:translateY(0); }
-  35%  { opacity:0; transform:translateY(-100%); }
-  100% { opacity:0; transform:translateY(-100%); }
-}
-
 /* ===== Sección de Tecnologías ===== */
 #skills {
   background: var(--bg-light);
@@ -206,146 +169,95 @@ footer {
   box-shadow: var(--shadow);
   padding: 80px 20px;
 }
-
 .skills-logos { gap: 2rem; }
 
-/* Iconos oscuros (simple-icons): los dejamos blancos con invert(1) */
+/* Iconos (simple-icons oscuros → blancos) */
 .skill-logo {
   width: 64px;
   height: 64px;
   object-fit: contain;
   transition: transform .25s ease, opacity .25s ease;
-  filter: invert(1) grayscale(100%) brightness(.95); /* blanco por defecto */
+  filter: invert(1) grayscale(100%) brightness(.95);
   opacity: .95;
 }
-
-.skill-logo:hover {
-  transform: scale(1.08);
-  /* NO cambiamos el filtro para evitar el negro */
-  opacity: .7;  /* más transparente en hover */
-}
+.skill-logo:hover { transform: scale(1.08); opacity: .7; }
 
 /* SVG inline usa el color actual (blanco) */
 .skill-logo svg,
 .skill-logo { color: #fff; }
 
-/* Logos claros (PNG ya blancos: Nomad/Procreate): sin invertir */
-.skill-logo--light {
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-.skill-logo--light:hover {
-  transform: scale(1.08);
-  filter: none !important;   /* no tocar color */
-  opacity: .7;               /* solo transparencia en hover */
-}
+/* Logos claros (ya blancos): no invertir */
+.skill-logo--light { filter: none !important; opacity: 1 !important; }
+.skill-logo--light:hover { transform: scale(1.08); filter: none !important; opacity: .7; }
 
 /* Accesibilidad: menos animación si el usuario lo prefiere */
 @media (prefers-reduced-motion: reduce) {
-  .skill-logo,
-  .skill-logo--light { transition: opacity .2s ease; }
-  .skill-logo:hover,
-  .skill-logo--light:hover { transform: none; }
+  .skill-logo, .skill-logo--light { transition: opacity .2s ease; }
+  .skill-logo:hover, .skill-logo--light:hover { transform: none; }
 }
 
-
-
-/* === Timeline: rail central + dots fijos === */
-:root{
-  --tl-rail-w: 54px;             /* ancho de la columna central */
-  --tl-line: 2px;                 /* grosor de la línea */
-  --tl-line-color: rgba(255,255,255,.24);
-  --tl-dot: 16px;                 /* diámetro del punto */
-}
-
-.tl { list-style: none; padding: 0; margin: 0; }
+/* === Timeline: rail central + dots fijos + línea continua === */
+.tl { list-style: none; padding: 0; margin: 0; position: relative; }
 .tl-row {
   display: grid;
   grid-template-columns: 1fr var(--tl-rail-w) 1fr; /* izq | rail | dcha */
   align-items: center;
   gap: clamp(16px, 3vw, 36px);
   margin: clamp(20px, 4vh, 40px) 0;
-  position: relative;
 }
 
-/* Rail (columna central) */
-.tl-rail {
-  grid-column: 2;
-  position: relative;
-  display: flex;                 /* para centrar el dot vertical/horizontal */
-  align-items: center;
-  justify-content: center;
-  min-height: 64px;              /* asegura espacio para el dot */
-}
-.tl-rail::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  left: calc(50% - var(--tl-line) / 2);  /* la línea SIEMPRE en el centro de la col */
-  width: var(--tl-line);
-  background: var(--tl-line-color);
-}
-
-/* Dot SIEMPRE sobre la línea (centrado por flex y translate) */
-.tl-dot {
-  width: var(--tl-dot);
-  height: var(--tl-dot);
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, var(--accent-light, #a39dff), var(--accent, #6c63ff));
-  box-shadow: 0 0 0 4px rgba(108,99,255,0.25), 0 0 18px rgba(108,99,255,0.42);
-  transform: translateX(0);      /* centrado porque el contenedor ya centra */
-  z-index: 1;
-}
-
-/* Tarjetas */
-.tl-card {
-  background: var(--bg-light, rgba(255,255,255,0.04));
-  border-radius: var(--radius, 14px);
-  box-shadow: var(--shadow, 0 8px 28px rgba(0,0,0,0.25));
-  padding: clamp(14px, 2.2vw, 24px);
-}
-.tl-card h3 {
-  margin: 0 0 8px 0;
-  color: var(--accent-light, #a39dff);
-}
-
-/* Responsive: en móvil una sola columna + rail a la izquierda */
-@media (max-width: 767.98px) {
-  .tl-row {
-    grid-template-columns: var(--tl-rail-w) 1fr; /* rail | contenido */
-    gap: 16px;
-  }
-  .tl-left, .tl-right { grid-column: 2; } /* todo el contenido pasa a la col de la derecha */
-  .tl-rail { grid-column: 1; }
-}
-
-/* === Timeline: continuous central line (thicker) === */
-:root { --tl-line: 3px; } /* sube a 4px si quieres */
-
-.tl { position: relative; }
-
-/* Línea única continua para todo el timeline */
+/* Línea continua para todo el timeline */
 .tl::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   width: var(--tl-line);
-  background: var(--tl-line-color, rgba(255,255,255,.28));
+  background: var(--tl-line-color);
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
 }
 
-/* En móvil, línea continua en la columna izquierda */
+/* Rail (columna central) */
+.tl-rail {
+  grid-column: 2;
+  position: relative;
+  display: flex;                 /* centra el dot */
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+}
+
+/* Dot siempre centrado sobre la línea */
+.tl-dot {
+  width: var(--tl-dot);
+  height: var(--tl-dot);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--accent-light), var(--accent));
+  box-shadow: 0 0 0 4px rgba(108,99,255,0.25), 0 0 18px rgba(108,99,255,0.42);
+  z-index: 1; /* por encima de la línea */
+}
+
+/* Tarjetas */
+.tl-card {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(14px, 2.2vw, 24px);
+}
+.tl-card h3 { margin: 0 0 8px 0; color: var(--accent-light); }
+
+/* Responsive: móvil = rail a la izquierda + contenido a la derecha */
 @media (max-width: 767.98px) {
   .tl::before {
     left: calc(var(--tl-rail-w) / 2);
     transform: translateX(-50%);
   }
+  .tl-row {
+    grid-template-columns: var(--tl-rail-w) 1fr; /* rail | contenido */
+    gap: 16px;
+  }
+  .tl-left, .tl-right { grid-column: 2; }
+  .tl-rail { grid-column: 1; }
 }
-
-/* Desactivar las líneas por fila para evitar cortes */
-.tl-rail::before { background: transparent !important; }
-
