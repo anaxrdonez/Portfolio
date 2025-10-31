@@ -209,32 +209,45 @@ footer {
 
 .skills-logos { gap: 2rem; }
 
+/* Iconos oscuros (simple-icons): los dejamos blancos con invert(1) */
 .skill-logo {
   width: 64px;
   height: 64px;
   object-fit: contain;
-  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
-  filter: grayscale(100%) brightness(0.9) invert(1);
-  opacity: 0.85;
+  transition: transform .25s ease, opacity .25s ease;
+  filter: invert(1) grayscale(100%) brightness(.95); /* blanco por defecto */
+  opacity: .95;
 }
 
 .skill-logo:hover {
-  transform: scale(1.12);
-  filter: grayscale(0%) brightness(1.1) invert(0);
-  opacity: 1;
+  transform: scale(1.08);
+  /* NO cambiamos el filtro para evitar el negro */
+  opacity: .7;  /* más transparente en hover */
 }
 
+/* SVG inline usa el color actual (blanco) */
 .skill-logo svg,
 .skill-logo { color: #fff; }
 
-/* Logos en formato claro (blancos): no invertir por defecto */
+/* Logos claros (PNG ya blancos: Nomad/Procreate): sin invertir */
 .skill-logo--light {
-  filter: none !important;   /* sin invert ni grayscale */
-  opacity: 1 !important;     /* totalmente visible */
+  filter: none !important;
+  opacity: 1 !important;
 }
 
-/* Hover coherente con el resto (ligero brillo + escala) */
 .skill-logo--light:hover {
-  transform: scale(1.12);
-  filter: brightness(1.15);
+  transform: scale(1.08);
+  filter: none !important;   /* no tocar color */
+  opacity: .7;               /* solo transparencia en hover */
 }
+
+/* Accesibilidad: menos animación si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .skill-logo,
+  .skill-logo--light { transition: opacity .2s ease; }
+  .skill-logo:hover,
+  .skill-logo--light:hover { transform: none; }
+}
+
+
+

@@ -91,7 +91,17 @@
         "hero.words.2": "Desarrollo.",
         "hero.words.3": "Creatividad.",
         "skills.title": "Tecnologías y Lenguajes",
-        "skills.subtitle": "Lenguajes, motores y herramientas que utilizo habitualmente"
+        "skills.subtitle": "Lenguajes, motores y herramientas que utilizo habitualmente",
+        "timeline.title": "Mi recorrido",
+        "timeline.title": "Mi recorrido",
+        "timeline.1.title": "2018–2020 · Bachillerato Tecnológico",
+        "timeline.1.desc": "IES Rodríguez Moñino, Badajoz (ES).",
+        "timeline.2.title": "2021–2025 · Grado en Diseño y Desarrollo de Videojuegos",
+        "timeline.2.desc": "Universidad Rey Juan Carlos (URJC). Carrera finalizada.",
+        "timeline.3.title": "2025 · Máster en Inteligencia Artificial",
+        "timeline.3.desc": "Universidad Politécnica de Madrid (UPM).",
+        "timeline.4.title": "2025 · Workplace Engineering Intern",
+        "timeline.4.desc": "Avanade Spain — soporte a usuarios, DX y flujos."
       },
       en: {
         brand: "AnaXrdonez",
@@ -134,7 +144,17 @@
         "hero.words.2": "Development.",
         "hero.words.3": "Creativity.",
         "skills.title": "Technologies & Languages",
-        "skills.subtitle": "Languages, engines and tools I use regularly"
+        "skills.subtitle": "Languages, engines and tools I use regularly",
+        "timeline.title": "My journey",
+        "timeline.title": "My journey",
+        "timeline.1.title": "2018–2020 · Technological Baccalaureate",
+        "timeline.1.desc": "IES Rodríguez Moñino, Badajoz (ES).",
+        "timeline.2.title": "2021–2025 · BSc in Game Design & Development",
+        "timeline.2.desc": "Universidad Rey Juan Carlos (URJC). Degree completed.",
+        "timeline.3.title": "2025 · Master's in Artificial Intelligence",
+        "timeline.3.desc": "Universidad Politécnica de Madrid (UPM).",
+        "timeline.4.title": "2025 · Workplace Engineering Intern",
+        "timeline.4.desc": "Avanade Spain — user support, DX and workflows."
       }
     };
   }
@@ -183,3 +203,5 @@
     if (lang) window.applyLang(lang);
   });
 })();
+
+
