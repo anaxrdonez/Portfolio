@@ -177,6 +177,7 @@ section {
     margin-bottom: 30px;
 }
 
+
 #projects .card {
     border: none;
     border-radius: 10px;
@@ -308,4 +309,19 @@ footer {
     height: auto; /* Mantiene la proporción */
     display: block; /* Elimina espacios blancos alrededor */
     border: 1px solid #000;
+}
+
+/* Marco compacto para el carrusel de Lucian */
+.carousel-frame {
+  max-width: 720px;   /* ajusta a tu gusto: 560, 640, 720... */
+  margin: 0 auto;
+}
+/* Imagenes del carrusel: caben dentro sin deformarse */
+#lucianCarousel .carousel-item img {
+  width: 100%;
+  height: 420px;      /* ajusta altura si lo quieres más bajo/alto */
+  object-fit: contain;
+  background: #111;   /* “letterbox” oscuro alrededor de la imagen */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.3);
 }

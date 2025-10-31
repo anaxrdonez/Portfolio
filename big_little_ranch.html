@@ -1,87 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Little Ranch</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Big Little Ranch</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Big Little Ranch</h1>
-        <p class="text-center">
-            Un clicker diseñado e ilustrado en Illustrator e implementado en Adobe Animate.
-        </p>
-
-        <!-- Video -->
-        <div class="text-center mb-5">
-            <video controls width="100%" style="max-width: 800px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                <source src="Assets/blrVideo.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
-        </div>
-
-        <!-- Tiles Section -->
-        <section id="tiles" class="my-5">
-            <h2 class="text-center mb-4">Tiles</h2>
-            <div class="row">
-                <!-- Árboles -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/Árboles.png" class="img-fluid rounded shadow" alt="Árboles">
-                    <p class="text-center mt-2">Árboles</p>
-                </div>
-                <!-- Camping -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/Camping.png" class="img-fluid rounded shadow" alt="Camping">
-                    <p class="text-center mt-2">Camping</p>
-                </div>
-                <!-- Granja -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/Granja.png" class="img-fluid rounded shadow" alt="Granja">
-                    <p class="text-center mt-2">Granja</p>
-                </div>
-                <!-- Granja Animales -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/GranjaAnimales.png" class="img-fluid rounded shadow" alt="Granja Animales">
-                    <p class="text-center mt-2">Granja Animales</p>
-                </div>
-                <!-- Molino -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/Molino.png" class="img-fluid rounded shadow" alt="Molino">
-                    <p class="text-center mt-2">Molino</p>
-                </div>
-                <!-- Montañas -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/Montañas2.png" class="img-fluid rounded shadow" alt="Montañas">
-                    <p class="text-center mt-2">Montañas</p>
-                </div>
-                <!-- Prado -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/Prado.png" class="img-fluid rounded shadow" alt="Prado">
-                    <p class="text-center mt-2">Prado</p>
-                </div>
-                <!-- Pueblo -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/Pueblo.png" class="img-fluid rounded shadow" alt="Pueblo">
-                    <p class="text-center mt-2">Pueblo</p>
-                </div>
-                <!-- Shadow -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/Shadow.png" class="img-fluid rounded shadow" alt="Shadow">
-                    <p class="text-center mt-2">Shadow</p>
-                </div>
-                <!-- Trigo -->
-                <div class="col-md-3 mb-4">
-                    <img src="Assets/Tiles/trigo.png" class="img-fluid rounded shadow" alt="Trigo">
-                    <p class="text-center mt-2">Trigo</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="text-center mt-4">
-            <a href="index.html" class="btn btn-dark">Volver al Portafolio</a>
-        </div>
+  <div class="container my-5">
+    <!-- Switch de idioma -->
+    <div class="d-flex justify-content-end">
+      <div class="lang-switch btn-group" role="group" aria-label="Language switch">
+        <button type="button" class="btn btn-sm btn-outline-dark active" data-lang="es">ES</button>
+        <button type="button" class="btn btn-sm btn-outline-dark" data-lang="en">EN</button>
+      </div>
     </div>
+
+    <h1 class="text-center mb-2" data-i18n="page.blr.title">Big Little Ranch</h1>
+    <p class="text-center mb-4" data-i18n="page.blr.subtitle">
+      Un clicker diseñado e ilustrado en Illustrator e implementado en Adobe Animate.
+    </p>
+
+    <!-- Vídeo -->
+    <div class="text-center mb-5">
+      <video controls width="100%" style="max-width: 800px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <source src="Assets/blrVideo.mp4" type="video/mp4" />
+        <span data-i18n="page.video.fallback">Tu navegador no soporta la etiqueta de video.</span>
+      </video>
+    </div>
+
+    <!-- Tiles -->
+    <section id="tiles" class="my-5">
+      <h2 class="text-center mb-4" data-i18n="page.tiles">Tiles</h2>
+      <div class="row">
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/Árboles.png" class="img-fluid rounded shadow" alt="Árboles" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.trees">Árboles</p>
+        </div>
+
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/Camping.png" class="img-fluid rounded shadow" alt="Camping" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.camping">Camping</p>
+        </div>
+
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/Granja.png" class="img-fluid rounded shadow" alt="Granja" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.farm">Granja</p>
+        </div>
+
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/GranjaAnimales.png" class="img-fluid rounded shadow" alt="Granja Animales" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.animalFarm">Granja Animales</p>
+        </div>
+
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/Molino.png" class="img-fluid rounded shadow" alt="Molino" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.mill">Molino</p>
+        </div>
+
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/Montañas2.png" class="img-fluid rounded shadow" alt="Montañas" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.mountains">Montañas</p>
+        </div>
+
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/Prado.png" class="img-fluid rounded shadow" alt="Prado" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.meadow">Prado</p>
+        </div>
+
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/Pueblo.png" class="img-fluid rounded shadow" alt="Pueblo" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.town">Pueblo</p>
+        </div>
+
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/Shadow.png" class="img-fluid rounded shadow" alt="Shadow" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.shadow">Shadow</p>
+        </div>
+
+        <div class="col-md-3 mb-4 text-center">
+          <img src="Assets/Tiles/trigo.png" class="img-fluid rounded shadow" alt="Trigo" loading="lazy" />
+          <p class="mt-2" data-i18n="tiles.wheat">Trigo</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center mt-4">
+      <a href="index.html" class="btn btn-dark" data-i18n="page.back">Volver al Portafolio</a>
+    </div>
+  </div>
+
+  <!-- Carga app.js SOLO una vez -->
+  <script src="app.js"></script>
+
+  <!-- Claves i18n específicas de esta página + aplicar idioma guardado -->
+  <script>
+    (function () {
+      // si app.js aún no inicializó el diccionario, espera brevemente
+      function ready() {
+        return window.dict && dict.es && dict.en && typeof applyLang === "function";
+      }
+      function inject() {
+        Object.assign(dict.es, {
+          "page.blr.title": "Big Little Ranch",
+          "page.blr.subtitle": "Un clicker diseñado e ilustrado en Illustrator e implementado en Adobe Animate.",
+          "page.video.fallback": "Tu navegador no soporta la etiqueta de video.",
+          "page.tiles": "Tiles",
+          "tiles.trees": "Árboles",
+          "tiles.camping": "Camping",
+          "tiles.farm": "Granja",
+          "tiles.animalFarm": "Granja Animales",
+          "tiles.mill": "Molino",
+          "tiles.mountains": "Montañas",
+          "tiles.meadow": "Prado",
+          "tiles.town": "Pueblo",
+          "tiles.shadow": "Shadow",
+          "tiles.wheat": "Trigo",
+          "page.back": "Volver al Portafolio"
+        });
+        Object.assign(dict.en, {
+          "page.blr.title": "Big Little Ranch",
+          "page.blr.subtitle": "A clicker game designed and illustrated in Illustrator and implemented with Adobe Animate.",
+          "page.video.fallback": "Your browser does not support the video tag.",
+          "page.tiles": "Tiles",
+          "tiles.trees": "Trees",
+          "tiles.camping": "Camping",
+          "tiles.farm": "Farm",
+          "tiles.animalFarm": "Animal Farm",
+          "tiles.mill": "Mill",
+          "tiles.mountains": "Mountains",
+          "tiles.meadow": "Meadow",
+          "tiles.town": "Town",
+          "tiles.shadow": "Shadow",
+          "tiles.wheat": "Wheat",
+          "page.back": "Back to Portfolio"
+        });
+
+        // aplica el idioma guardado (así mantiene el que elegiste en el index)
+        const saved = (localStorage.getItem("lang") || "es").slice(0, 2);
+        applyLang(saved === "en" ? "en" : "es");
+      }
+
+      if (ready()) {
+        inject();
+      } else {
+        const t = setInterval(() => {
+          if (ready()) { clearInterval(t); inject(); }
+        }, 50);
+      }
+    })();
+  </script>
 </body>
 </html>

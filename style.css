@@ -1,0 +1,111 @@
+:root{
+  --bg: #0b0b10;
+  --bg2:#12121a;
+  --fg:#f5f7ff;
+  --muted:#a2a6b3;
+  --primary:#7b5cff; /* acento violeta estilo “game dev” */
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", "Noto Color Emoji";
+  background: radial-gradient(1200px 600px at 20% 0%, #111 0%, #0b0b10 60%, #0b0b10 100%);
+  color: var(--fg);
+}
+
+/* Navbar “shrink” + translucidez */
+.custom-navbar{
+  backdrop-filter: blur(8px);
+  background: color-mix(in oklab, #0b0b10 80%, transparent);
+  transition: padding .25s ease, background .25s ease, box-shadow .25s ease;
+  padding-block: .85rem;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.navbar.scrolled{
+  padding-block: .5rem;
+  background: #0b0b10e6;
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+}
+.navbar .nav-link{ color:#e9ebff; opacity:.9 }
+.navbar .nav-link:hover{ opacity:1 }
+.lang-switch .btn{ border-color: rgba(255,255,255,.35) }
+.lang-switch .btn.active{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:white;
+}
+
+/* Hero con degradé animado y blobs flotantes tipo “Gerlogu vibe” */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  padding-top: 80px;
+  background:
+    radial-gradient(800px 400px at 80% 20%, #1b1530 0%, transparent 60%),
+    radial-gradient(600px 300px at 20% 80%, #202a52 0%, transparent 60%),
+    linear-gradient(180deg, #0b0b10 0%, #0b0b10 70%, #0c0c12 100%);
+  overflow: hidden;
+}
+.hero .display-4{ letter-spacing:.5px }
+.hero .btn-primary{
+  background: var(--primary);
+  border: none;
+}
+.hero-float{
+  position:absolute; border-radius:50%; opacity:.25; filter: blur(10px);
+  background: conic-gradient(from 0deg, #7b5cff, #3ec7ff, #7b5cff);
+  animation: float 12s ease-in-out infinite;
+}
+.hero-float--1{ width:220px; height:220px; left:5%; top:15%; animation-delay: 0s }
+.hero-float--2{ width:280px; height:280px; right:10%; bottom:8%; animation-delay: 2s }
+.hero-float--3{ width:160px; height:160px; right:30%; top:10%; animation-delay: 4s }
+
+@keyframes float{
+  0%,100%{ transform: translateY(0) translateX(0) }
+  50%{ transform: translateY(-12px) translateX(8px) }
+}
+
+/* Secciones */
+.section-padding{ padding-block: 80px }
+.section-title{
+  font-weight: 800;
+  letter-spacing:.3px;
+}
+
+/* Tarjetas de proyecto con microinteracción */
+.project-card{
+  background: linear-gradient(180deg, #12121a 0%, #0f0f16 100%);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  transform: translateZ(0);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  will-change: transform;
+}
+.project-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(0,0,0,.35);
+  border-color: rgba(123,92,255,.35);
+}
+.project-media{
+  display:block; overflow:hidden; border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.project-media img{
+  display:block; width:100%; height:auto; transform: scale(1.01);
+  transition: transform .4s ease, filter .3s ease;
+}
+.project-card:hover .project-media img{
+  transform: scale(1.05);
+  filter: saturate(1.05);
+}
+
+/* “Reveal on scroll” */
+.reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease }
+.reveal.in-view{ opacity:1; transform: none }
+
+/* Footer */
+footer{
+  border-top: 1px solid rgba(255,255,255,.06);
+  background: var(--bg2);
+  color: var(--muted);
+}
