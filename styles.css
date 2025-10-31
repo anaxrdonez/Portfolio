@@ -11,10 +11,10 @@
   --shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 
   /* Timeline */
-  --tl-rail-w: 54px;                  /* ancho columna central */
-  --tl-line: 3px;                     /* grosor de la línea (ajusta aquí) */
+  --tl-rail-w: 54px;
+  --tl-line: 3px;
   --tl-line-color: rgba(255,255,255,.28);
-  --tl-dot: 16px;                     /* diámetro del punto */
+  --tl-dot: 16px;
 }
 
 /* === Base === */
@@ -66,18 +66,18 @@ body {
 /* ===== Texto animado bajo el nombre ===== */
 .hero-content { text-align: center; position: relative; z-index: 2; }
 
-.changing-text{
+.changing-text {
   display: block;
-  position: relative;       /* referencia para los spans absolutos */
-  height: 1.6em;            /* alto fijo para evitar saltos */
+  position: relative;
+  height: 1.6em;
   line-height: 1.6em;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 1px;
   color: #c5c8ff;
-  margin: 0 auto;           /* centrado */
+  margin: 0 auto;
 }
-.changing-text span{
+.changing-text span {
   position: absolute;
   left: 0; right: 0;
   width: 100%;
@@ -89,7 +89,7 @@ body {
 .changing-text span:nth-child(1){ animation-delay: 0s; }
 .changing-text span:nth-child(2){ animation-delay: 2s; }
 .changing-text span:nth-child(3){ animation-delay: 4s; }
-@keyframes rotateText{
+@keyframes rotateText {
   0%   { opacity: 0; transform: translateY(100%); }
   5%   { opacity: 1; transform: translateY(0); }
   30%  { opacity: 1; transform: translateY(0); }
@@ -97,18 +97,47 @@ body {
   100% { opacity: 0; transform: translateY(-100%); }
 }
 
-/* === Sobre mí === */
+/* === Sobre mí (foto con fondo blanco) === */
+.about-section {
+  background: linear-gradient(145deg, rgba(255,255,255,0.02), rgba(255,255,255,0.05));
+  border-radius: var(--radius);
+  box-shadow: 0 0 40px rgba(0,0,0,0.25);
+  padding: clamp(60px, 8vw, 100px) 20px;
+}
+
+.about-photo-wrapper {
+  display: inline-block;
+  border-radius: 50%;
+  background: #ffffff;              /* fondo blanco circular */
+  padding: 14px;                    /* grosor del marco blanco */
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-photo-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
 .about-photo {
-  width: 200px;
-  height: 200px;
+  display: block;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 25px rgba(108,99,255,0.4);
+  background: transparent;          /* PNG transparente sobre fondo blanco */
 }
-.section-title {
-  font-weight: 700;
-  color: var(--accent-light);
-  margin-bottom: 30px;
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  text-align: justify;
+  color: var(--text-light);
+}
+
+@media (max-width: 767.98px) {
+  .about-photo-wrapper { padding: 10px; }
+  .about-photo { width: 200px; height: 200px; }
+  .about-text { text-align: center; font-size: 1rem; }
 }
 
 /* === Proyectos === */
@@ -171,7 +200,6 @@ footer {
 }
 .skills-logos { gap: 2rem; }
 
-/* Iconos (simple-icons oscuros → blancos) */
 .skill-logo {
   width: 64px;
   height: 64px;
@@ -181,32 +209,26 @@ footer {
   opacity: .95;
 }
 .skill-logo:hover { transform: scale(1.08); opacity: .7; }
-
-/* SVG inline usa el color actual (blanco) */
 .skill-logo svg,
 .skill-logo { color: #fff; }
 
-/* Logos claros (ya blancos): no invertir */
 .skill-logo--light { filter: none !important; opacity: 1 !important; }
 .skill-logo--light:hover { transform: scale(1.08); filter: none !important; opacity: .7; }
 
-/* Accesibilidad: menos animación si el usuario lo prefiere */
 @media (prefers-reduced-motion: reduce) {
   .skill-logo, .skill-logo--light { transition: opacity .2s ease; }
   .skill-logo:hover, .skill-logo--light:hover { transform: none; }
 }
 
-/* === Timeline: rail central + dots fijos + línea continua === */
+/* === Timeline === */
 .tl { list-style: none; padding: 0; margin: 0; position: relative; }
 .tl-row {
   display: grid;
-  grid-template-columns: 1fr var(--tl-rail-w) 1fr; /* izq | rail | dcha */
+  grid-template-columns: 1fr var(--tl-rail-w) 1fr;
   align-items: center;
   gap: clamp(16px, 3vw, 36px);
   margin: clamp(20px, 4vh, 40px) 0;
 }
-
-/* Línea continua para todo el timeline */
 .tl::before {
   content: "";
   position: absolute;
@@ -218,28 +240,22 @@ footer {
   transform: translateX(-50%);
   z-index: 0;
 }
-
-/* Rail (columna central) */
 .tl-rail {
   grid-column: 2;
   position: relative;
-  display: flex;                 /* centra el dot */
+  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 64px;
 }
-
-/* Dot siempre centrado sobre la línea */
 .tl-dot {
   width: var(--tl-dot);
   height: var(--tl-dot);
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, var(--accent-light), var(--accent));
   box-shadow: 0 0 0 4px rgba(108,99,255,0.25), 0 0 18px rgba(108,99,255,0.42);
-  z-index: 1; /* por encima de la línea */
+  z-index: 1;
 }
-
-/* Tarjetas */
 .tl-card {
   background: var(--bg-light);
   border-radius: var(--radius);
@@ -248,74 +264,15 @@ footer {
 }
 .tl-card h3 { margin: 0 0 8px 0; color: var(--accent-light); }
 
-/* Responsive: móvil = rail a la izquierda + contenido a la derecha */
 @media (max-width: 767.98px) {
   .tl::before {
     left: calc(var(--tl-rail-w) / 2);
     transform: translateX(-50%);
   }
   .tl-row {
-    grid-template-columns: var(--tl-rail-w) 1fr; /* rail | contenido */
+    grid-template-columns: var(--tl-rail-w) 1fr;
     gap: 16px;
   }
   .tl-left, .tl-right { grid-column: 2; }
   .tl-rail { grid-column: 1; }
-}
-
-/* === Sección "Sobre mí" mejorada === */
-.about-section {
-  background: linear-gradient(145deg, rgba(255,255,255,0.02), rgba(255,255,255,0.05));
-  border-radius: var(--radius);
-  box-shadow: 0 0 40px rgba(0,0,0,0.25);
-  padding: clamp(60px, 8vw, 100px) 20px;
-}
-
-.about-photo-wrapper {
-  position: relative;
-  display: inline-block;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 0 30px rgba(108,99,255,0.4);
-  transition: transform .4s ease, box-shadow .4s ease;
-}
-.about-photo-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(108,99,255,0.25), transparent 70%);
-  opacity: 0;
-  transition: opacity .4s ease;
-}
-.about-photo-wrapper:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 45px rgba(108,99,255,0.55);
-}
-.about-photo-wrapper:hover::after { opacity: 1; }
-
-.about-photo {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
-
-.about-text {
-  font-size: 1.1rem;
-  line-height: 1.75;
-  text-align: justify;
-  color: var(--text-light);
-}
-
-/* Responsive: centrado en móvil */
-@media (max-width: 767.98px) {
-  .about-photo {
-    width: 200px;
-    height: 200px;
-  }
-  .about-text {
-    text-align: center;
-    font-size: 1rem;
-  }
 }
