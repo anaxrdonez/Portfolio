@@ -261,3 +261,61 @@ footer {
   .tl-left, .tl-right { grid-column: 2; }
   .tl-rail { grid-column: 1; }
 }
+
+/* === Sección "Sobre mí" mejorada === */
+.about-section {
+  background: linear-gradient(145deg, rgba(255,255,255,0.02), rgba(255,255,255,0.05));
+  border-radius: var(--radius);
+  box-shadow: 0 0 40px rgba(0,0,0,0.25);
+  padding: clamp(60px, 8vw, 100px) 20px;
+}
+
+.about-photo-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(108,99,255,0.4);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+.about-photo-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(108,99,255,0.25), transparent 70%);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.about-photo-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 45px rgba(108,99,255,0.55);
+}
+.about-photo-wrapper:hover::after { opacity: 1; }
+
+.about-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  text-align: justify;
+  color: var(--text-light);
+}
+
+/* Responsive: centrado en móvil */
+@media (max-width: 767.98px) {
+  .about-photo {
+    width: 200px;
+    height: 200px;
+  }
+  .about-text {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
