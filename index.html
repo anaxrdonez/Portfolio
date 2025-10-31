@@ -5,38 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AnaXrdonez — Portfolio</title>
 
-  <!-- SEO básico -->
-  <meta name="description" content="Portfolio de Ana Ordóñez Gragera: diseño y desarrollo de videojuegos, animación 3D, prototipos y proyectos." />
+  <meta name="description" content="Portfolio de Ana Ordóñez Gragera: diseño y desarrollo de videojuegos, animación 3D y prototipos interactivos." />
   <meta name="theme-color" content="#0d0d0f" />
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap y fuentes -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
 
-  <!-- Fuente opcional -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <!-- AOS (animaciones scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-  <!-- Estilos propios -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#top" data-i18n="brand">AnaXrdonez</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about">Sobre Mí</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav.projects">Proyectos</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contacto</a></li>
-
-          <!-- Selector de idioma -->
           <li class="nav-item ms-lg-3">
             <div class="lang-switch btn-group" role="group" aria-label="Language switch">
               <button type="button" class="btn btn-sm btn-outline-light active" data-lang="es">ES</button>
@@ -49,213 +43,148 @@
   </nav>
 
   <!-- Hero -->
-  <header id="top" class="hero d-flex flex-column justify-content-center align-items-center text-center text-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
-          <h1 class="display-4 fw-extrabold mb-3" data-i18n="hero.title">AnaXrdonez</h1>
-          <p class="lead opacity-75" data-i18n="hero.subtitle">Conoce mis proyectos y habilidades</p>
-          <div class="mt-4">
-            <a href="#projects" class="btn btn-primary btn-lg shadow-sm" data-i18n="hero.cta">Ver proyectos</a>
-          </div>
-        </div>
-      </div>
+  <header id="top" class="hero text-center text-white d-flex flex-column justify-content-center align-items-center">
+    <div class="background-gradient"></div>
+    <div class="hero-content" data-aos="fade-up">
+      <h1 class="display-3 fw-bold mb-3 gradient-text" data-i18n="hero.title">Ana Ordóñez</h1>
+      <h2 class="changing-text">
+        <span data-i18n="hero.words.1">Diseño.</span>
+        <span data-i18n="hero.words.2">Desarrollo.</span>
+        <span data-i18n="hero.words.3">Creatividad.</span>
+      </h2>
+      <a href="#projects" class="btn btn-primary mt-4" data-i18n="hero.cta">Ver Proyectos</a>
     </div>
-    <!-- Decoración parallax -->
-    <div class="hero-float hero-float--1"></div>
-    <div class="hero-float hero-float--2"></div>
-    <div class="hero-float hero-float--3"></div>
   </header>
 
   <!-- Sobre mí -->
-  <section id="about" class="container section-padding">
-    <div class="row align-items-center g-4">
-      <div class="col-md-4 text-center">
-        <img src="Assets/yo.png" alt="Foto de Ana Ordóñez" class="img-fluid rounded-circle shadow-lg reveal" loading="lazy" />
-      </div>
-      <div class="col-md-8">
-        <h2 class="section-title reveal" data-i18n="about.title">Sobre Mí</h2>
-        <p class="reveal" data-i18n="about.body">
-          Mi nombre es Ana Ordóñez Gragera, tengo 22 años y soy estudiante de último curso de
-          <strong>Diseño y Desarrollo de Videojuegos</strong> en la Universidad Rey Juan Carlos.
-          Mi pasión por los videojuegos y la animación 3D me ha llevado a desarrollar proyectos desde un
-          <em>Arkanoid</em> en lenguaje ensamblador hasta un multijugador online de carreras
-          pasando por animaciones faciales, simulaciones físicas y concept art, ¡incluso probando el pixel art!
-        </p>
-      </div>
+  <section id="about" class="section" data-aos="fade-up">
+    <div class="container text-center">
+      <img src="Assets/yo.png" alt="Foto de Ana Ordóñez" class="about-photo mb-4" />
+      <h2 class="section-title" data-i18n="about.title">Sobre Mí</h2>
+      <p class="lead" data-i18n="about.body">
+        Soy <strong>Ana Ordóñez Gragera</strong>, tengo <strong>23 años</strong> y he completado la carrera de
+        <strong>Diseño y Desarrollo de Videojuegos</strong> en la Universidad Rey Juan Carlos.
+        Mi pasión por los videojuegos y la animación 3D me ha llevado a desarrollar proyectos que abarcan
+        desde un <em>Arkanoid</em> en ensamblador hasta un multijugador online de carreras,
+        pasando por animaciones, simulaciones físicas y concept art.
+      </p>
     </div>
   </section>
 
   <!-- Proyectos -->
-  <section id="projects" class="container section-padding">
-    <h2 class="section-title text-center mb-4 reveal" data-i18n="projects.title">Proyectos Destacados</h2>
-
-    <div class="row g-4">
-      <!-- 1 -->
-      <div class="col-sm-6 col-lg-4">
-        <article class="card project-card reveal">
-          <a href="big_little_ranch.html" class="project-media">
-            <img src="Assets/BigLittleRanch.png" class="card-img-top" alt="Big Little Ranch" loading="lazy" />
+  <section id="projects" class="section" data-aos="fade-up">
+    <div class="container text-center">
+      <h2 class="section-title mb-5" data-i18n="projects.title">Proyectos Destacados</h2>
+      <div class="row g-4">
+        <!-- Big Little Ranch -->
+        <div class="col-md-4">
+          <a href="big_little_ranch.html" class="project-card">
+            <img src="Assets/BigLittleRanch.png" alt="Big Little Ranch" />
+            <div class="project-info">
+              <h3 data-i18n="projects.items.blr.title">Big Little Ranch</h3>
+              <p data-i18n="projects.items.blr.desc">Clicker ilustrado e implementado en Adobe Animate.</p>
+            </div>
           </a>
-          <div class="card-body">
-            <h3 class="h5 card-title" data-i18n="projects.items.blr.title">Big Little Ranch</h3>
-            <p class="card-text small opacity-75" data-i18n="projects.items.blr.desc">
-              Clicker ilustrado e implementado en Adobe Animate.
-            </p>
-          </div>
-        </article>
-      </div>
+        </div>
 
-      <!-- 2 -->
-      <div class="col-sm-6 col-lg-4">
-        <article class="card project-card reveal">
-          <a href="lucian.html" class="project-media">
-            <img src="Assets/Lucian.png" class="card-img-top" alt="Lucian" loading="lazy" />
+        <!-- Lucian -->
+        <div class="col-md-4">
+          <a href="lucian.html" class="project-card">
+            <img src="Assets/Lucian.png" alt="Lucian" />
+            <div class="project-info">
+              <h3 data-i18n="projects.items.lucian.title">Lucian</h3>
+              <p data-i18n="projects.items.lucian.desc">Aventura gráfica con modelado y animación en Blender y Unity.</p>
+            </div>
           </a>
-          <div class="card-body">
-            <h3 class="h5 card-title" data-i18n="projects.items.lucian.title">Lucian</h3>
-            <p class="card-text small opacity-75" data-i18n="projects.items.lucian.desc">
-              Aventura gráfica con modelado y animación en Blender y Unity.
-            </p>
-          </div>
-        </article>
-      </div>
+        </div>
 
-      <!-- 3 -->
-      <div class="col-sm-6 col-lg-4">
-        <article class="card project-card reveal">
-          <a href="tiny_troops_tactics.html" class="project-media">
-            <img src="Assets/ttt.png" class="card-img-top" alt="Tiny Troops Tactics" loading="lazy" />
+        <!-- Tiny Troops Tactics -->
+        <div class="col-md-4">
+          <a href="tiny_troops_tactics.html" class="project-card">
+            <img src="Assets/ttt.png" alt="Tiny Troops Tactics" />
+            <div class="project-info">
+              <h3 data-i18n="projects.items.ttt.title">Tiny Troops Tactics</h3>
+              <p data-i18n="projects.items.ttt.desc">Multijugador local en tiempo real con conquista de mapas.</p>
+            </div>
           </a>
-          <div class="card-body">
-            <h3 class="h5 card-title" data-i18n="projects.items.ttt.title">Tiny Troops Tactics</h3>
-            <p class="card-text small opacity-75" data-i18n="projects.items.ttt.desc">
-              Multijugador local en tiempo real con conquista de mapas.
-            </p>
-          </div>
-        </article>
-      </div>
+        </div>
 
-      <!-- 4 -->
-      <div class="col-sm-6 col-lg-4">
-        <article class="card project-card reveal">
-          <a href="boubaDistrict.html" class="project-media">
-            <img src="Assets/boubaDistrict/Caratula.jpg" class="card-img-top" alt="Bouba District" loading="lazy" />
+        <!-- Bouba District -->
+        <div class="col-md-4">
+          <a href="boubaDistrict.html" class="project-card">
+            <img src="Assets/boubaDistrict/Caratula.jpg" alt="Bouba District" />
+            <div class="project-info">
+              <h3 data-i18n="projects.items.bouba.title">Bouba District</h3>
+              <p data-i18n="projects.items.bouba.desc">Juego de ritmo tipo tower defense… ¡divertidísimo!</p>
+            </div>
           </a>
-          <div class="card-body">
-            <h3 class="h5 card-title" data-i18n="projects.items.bouba.title">Bouba District</h3>
-            <p class="card-text small opacity-75" data-i18n="projects.items.bouba.desc">
-              Juego de ritmo tipo tower defense… ¡divertidísimo!
-            </p>
-          </div>
-        </article>
-      </div>
+        </div>
 
-      <!-- 5 -->
-      <div class="col-sm-6 col-lg-4">
-        <article class="card project-card reveal">
-          <a href="tileRush.html" class="project-media">
-            <img src="Assets/tileRush/tileRushCaratula.png" class="card-img-top" alt="Tile Rush" loading="lazy" />
+        <!-- Tile Rush -->
+        <div class="col-md-4">
+          <a href="tileRush.html" class="project-card">
+            <img src="Assets/tileRush/tileRushCaratula.png" alt="Tile Rush" />
+            <div class="project-info">
+              <h3 data-i18n="projects.items.tile.title">Tile Rush</h3>
+              <p data-i18n="projects.items.tile.desc">
+                Juego de velocidad y lógica basado en combinación de tiles. Realizado con Flutter, para Android.
+              </p>
+            </div>
           </a>
-          <div class="card-body">
-            <h3 class="h5 card-title" data-i18n="projects.items.tile.title">Tile Rush</h3>
-            <p class="card-text small opacity-75" data-i18n="projects.items.tile.desc">
-              Juego de velocidad y lógica basado en combinación de tiles. Realizado con Flutter, para Android.
-            </p>
-          </div>
-        </article>
-      </div>
+        </div>
 
-      <!-- 6 -->
-      <div class="col-sm-6 col-lg-4">
-        <article class="card project-card reveal">
-          <a href="trivia.html" class="project-media">
-            <img src="Assets/trivia/triviaCaratula.jpg" class="card-img-top" alt="Trivia" loading="lazy" />
+        <!-- Trivia -->
+        <div class="col-md-4">
+          <a href="trivia.html" class="project-card">
+            <img src="Assets/trivia/triviaCaratula.jpg" alt="Trivia" />
+            <div class="project-info">
+              <h3 data-i18n="projects.items.trivia.title">Trivia</h3>
+              <p data-i18n="projects.items.trivia.desc">
+                Juego interactivo de preguntas y respuestas con puntuación para Android.
+              </p>
+            </div>
           </a>
-          <div class="card-body">
-            <h3 class="h5 card-title" data-i18n="projects.items.trivia.title">Trivia</h3>
-            <p class="card-text small opacity-75" data-i18n="projects.items.trivia.desc">
-              Juego interactivo de preguntas y respuestas con puntuación para Android.
-            </p>
-          </div>
-        </article>
-      </div>
+        </div>
 
-      <!-- 7 -->
-      <div class="col-sm-6 col-lg-4">
-        <article class="card project-card reveal">
-          <a href="burbun.html" class="project-media">
-            <img src="Assets/burbun/caratula.png" class="card-img-top" alt="BURBUN" loading="lazy" />
+        <!-- BURBUN -->
+        <div class="col-md-4">
+          <a href="burbun.html" class="project-card">
+            <img src="Assets/burbun/caratula.png" alt="BURBUN" />
+            <div class="project-info">
+              <h3>BURBUN</h3>
+              <p data-i18n="projects.items.burbun.desc">
+                Juego pixel art de cartas donde debes apilar y vencer a la IA lo más rápido posible.
+              </p>
+            </div>
           </a>
-          <div class="card-body">
-            <h3 class="h5 card-title">BURBUN</h3>
-            <p class="card-text small opacity-75" data-i18n="projects.items.burbun.desc">
-              Juego pixel art de cartas donde debes apilar y vencer a la IA lo más rápido posible.
-            </p>
-          </div>
-        </article>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Mini juego Arkanoid -->
-  <section id="arkanoid-game" class="container section-padding text-center">
-    <h2 class="section-title mb-3 reveal" data-i18n="arkanoid.title">Mini Juego: Arkanoid</h2>
-    <p class="mb-4 reveal" data-i18n="arkanoid.desc">
-      Un pequeño ejemplo del juego que más veces he recreado en diferentes lenguajes durante la carrera.
-      ¡Disfruta este clásico que nunca pasa de moda!
-    </p>
-
-    <div id="game-container" class="mx-auto" style="position: relative; width: 100%; max-width: 480px;">
-      <canvas id="arkanoidCanvas"></canvas>
-    </div>
-
-    <div id="game-controls" class="my-3 reveal">
-      <button id="startGameButton" class="btn btn-primary me-2" data-i18n="arkanoid.start">¡Comenzar Juego!</button>
-      <button id="restartGameButton" class="btn btn-secondary d-none" data-i18n="arkanoid.restart">Volver a Jugar</button>
-    </div>
-
-    <div id="score-display" class="mb-3 reveal" data-i18n-static="arkanoid.score">Puntuación: 0</div>
-
-    <div class="donation-section mt-4 reveal">
-      <p data-i18n="arkanoid.tip">
-        ¿Te divirtió el juego? Ayúdame a mantener el tanque de cafeína lleno. ¡Los desarrolladores también necesitamos combustible! ☕🔋🕹️
-      </p>
-      <a href="https://www.paypal.com/donate?business=anaordonezgragera@gmail.com&currency_code=EUR&amount=0.50"
-         class="btn btn-success" target="_blank" rel="noopener" data-i18n="arkanoid.donateBtn">
-        Donar 50 céntimos
-      </a>
     </div>
   </section>
 
   <!-- Contacto -->
-  <section id="contact" class="container section-padding">
-    <h2 class="section-title reveal" data-i18n="contact.title">Contáctame</h2>
-    <form action="https://formspree.io/f/xdkorone" method="POST" class="reveal">
-      <div class="mb-3">
-        <label for="name" class="form-label" data-i18n="contact.name">Nombre</label>
-        <input type="text" class="form-control" id="name" name="name" required />
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label" data-i18n="contact.email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required />
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label" data-i18n="contact.message">Mensaje</label>
-        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" data-i18n="contact.send">Enviar</button>
-    </form>
+  <section id="contact" class="section contact" data-aos="fade-up">
+    <div class="container text-center">
+      <h2 class="section-title" data-i18n="contact.title">Contáctame</h2>
+      <p class="lead mb-4" data-i18n="contact.text">¿Te gustaría colaborar o saber más? Escríbeme:</p>
+      <a href="mailto:anaordonez.prac@gmail.com" class="btn btn-primary">anaordonez.prac@gmail.com</a>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-4 text-center text-muted">
-    <small>&copy; <span id="year"></span> AnaXrdonez. <span data-i18n="footer.rights">Todos los derechos reservados.</span></small>
+  <footer class="text-center py-4">
+    <p class="small text-muted">
+      © <span id="year"></span> AnaXrdonez — <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+    </p>
   </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="app.js"></script>
-  <script src="game.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
