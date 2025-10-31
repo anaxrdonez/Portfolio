@@ -86,7 +86,10 @@
         "contact.email": "Email",
         "contact.message": "Mensaje",
         "contact.send": "Enviar",
-        "footer.rights": "Todos los derechos reservados."
+        "footer.rights": "Todos los derechos reservados.",
+        "hero.words.1": "Diseño.",
+        "hero.words.2": "Desarrollo.",
+        "hero.words.3": "Creatividad."
       },
       en: {
         brand: "AnaXrdonez",
@@ -124,7 +127,10 @@
         "contact.email": "Email",
         "contact.message": "Message",
         "contact.send": "Send",
-        "footer.rights": "All rights reserved."
+        "footer.rights": "All rights reserved.",
+        "hero.words.1": "Design.",
+        "hero.words.2": "Development.",
+        "hero.words.3": "Creativity."
       }
     };
   }
