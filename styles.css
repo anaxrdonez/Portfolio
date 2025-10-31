@@ -199,3 +199,42 @@ footer {
   100% { opacity:0; transform:translateY(-100%); }
 }
 
+/* ===== Sección de Tecnologías ===== */
+#skills {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 80px 20px;
+}
+
+.skills-logos { gap: 2rem; }
+
+.skill-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  filter: grayscale(100%) brightness(0.9) invert(1);
+  opacity: 0.85;
+}
+
+.skill-logo:hover {
+  transform: scale(1.12);
+  filter: grayscale(0%) brightness(1.1) invert(0);
+  opacity: 1;
+}
+
+.skill-logo svg,
+.skill-logo { color: #fff; }
+
+/* Logos en formato claro (blancos): no invertir por defecto */
+.skill-logo--light {
+  filter: none !important;   /* sin invert ni grayscale */
+  opacity: 1 !important;     /* totalmente visible */
+}
+
+/* Hover coherente con el resto (ligero brillo + escala) */
+.skill-logo--light:hover {
+  transform: scale(1.12);
+  filter: brightness(1.15);
+}

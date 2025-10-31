@@ -89,7 +89,9 @@
         "footer.rights": "Todos los derechos reservados.",
         "hero.words.1": "Diseño.",
         "hero.words.2": "Desarrollo.",
-        "hero.words.3": "Creatividad."
+        "hero.words.3": "Creatividad.",
+        "skills.title": "Tecnologías y Lenguajes",
+        "skills.subtitle": "Lenguajes, motores y herramientas que utilizo habitualmente"
       },
       en: {
         brand: "AnaXrdonez",
@@ -130,7 +132,9 @@
         "footer.rights": "All rights reserved.",
         "hero.words.1": "Design.",
         "hero.words.2": "Development.",
-        "hero.words.3": "Creativity."
+        "hero.words.3": "Creativity.",
+        "skills.title": "Technologies & Languages",
+        "skills.subtitle": "Languages, engines and tools I use regularly"
       }
     };
   }
