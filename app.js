@@ -205,3 +205,26 @@
 })();
 
 
+/* Timeline reveal on scroll */
+(function() {
+  try {
+    var items = document.querySelectorAll('.timeline-item');
+    if (!('IntersectionObserver' in window) || !items.length) {
+      // Fallback: mostrar todos si no hay soporte
+      items.forEach(function(el){ el.classList.add('in-view'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target); // performance
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+    items.forEach(function(el){ io.observe(el); });
+  } catch(e) {
+    var els = document.querySelectorAll('.timeline-item');
+    els.forEach(function(el){ el.classList.add('in-view'); });
+  }
+})();

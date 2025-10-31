@@ -251,3 +251,101 @@ footer {
 
 
 
+/* === Timeline: rail central + dots fijos === */
+:root{
+  --tl-rail-w: 54px;             /* ancho de la columna central */
+  --tl-line: 2px;                 /* grosor de la línea */
+  --tl-line-color: rgba(255,255,255,.24);
+  --tl-dot: 16px;                 /* diámetro del punto */
+}
+
+.tl { list-style: none; padding: 0; margin: 0; }
+.tl-row {
+  display: grid;
+  grid-template-columns: 1fr var(--tl-rail-w) 1fr; /* izq | rail | dcha */
+  align-items: center;
+  gap: clamp(16px, 3vw, 36px);
+  margin: clamp(20px, 4vh, 40px) 0;
+  position: relative;
+}
+
+/* Rail (columna central) */
+.tl-rail {
+  grid-column: 2;
+  position: relative;
+  display: flex;                 /* para centrar el dot vertical/horizontal */
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;              /* asegura espacio para el dot */
+}
+.tl-rail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: calc(50% - var(--tl-line) / 2);  /* la línea SIEMPRE en el centro de la col */
+  width: var(--tl-line);
+  background: var(--tl-line-color);
+}
+
+/* Dot SIEMPRE sobre la línea (centrado por flex y translate) */
+.tl-dot {
+  width: var(--tl-dot);
+  height: var(--tl-dot);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--accent-light, #a39dff), var(--accent, #6c63ff));
+  box-shadow: 0 0 0 4px rgba(108,99,255,0.25), 0 0 18px rgba(108,99,255,0.42);
+  transform: translateX(0);      /* centrado porque el contenedor ya centra */
+  z-index: 1;
+}
+
+/* Tarjetas */
+.tl-card {
+  background: var(--bg-light, rgba(255,255,255,0.04));
+  border-radius: var(--radius, 14px);
+  box-shadow: var(--shadow, 0 8px 28px rgba(0,0,0,0.25));
+  padding: clamp(14px, 2.2vw, 24px);
+}
+.tl-card h3 {
+  margin: 0 0 8px 0;
+  color: var(--accent-light, #a39dff);
+}
+
+/* Responsive: en móvil una sola columna + rail a la izquierda */
+@media (max-width: 767.98px) {
+  .tl-row {
+    grid-template-columns: var(--tl-rail-w) 1fr; /* rail | contenido */
+    gap: 16px;
+  }
+  .tl-left, .tl-right { grid-column: 2; } /* todo el contenido pasa a la col de la derecha */
+  .tl-rail { grid-column: 1; }
+}
+
+/* === Timeline: continuous central line (thicker) === */
+:root { --tl-line: 3px; } /* sube a 4px si quieres */
+
+.tl { position: relative; }
+
+/* Línea única continua para todo el timeline */
+.tl::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--tl-line);
+  background: var(--tl-line-color, rgba(255,255,255,.28));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* En móvil, línea continua en la columna izquierda */
+@media (max-width: 767.98px) {
+  .tl::before {
+    left: calc(var(--tl-rail-w) / 2);
+    transform: translateX(-50%);
+  }
+}
+
+/* Desactivar las líneas por fila para evitar cortes */
+.tl-rail::before { background: transparent !important; }
+
