@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uncertainty Metrics Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Fondo como el hero (opcional, queda muy bien) -->
+  <div class="background-gradient" aria-hidden="true"></div>
+
+  <main class="project-page">
+    <!-- Header -->
+    <header class="project-hero">
+      <a class="project-back" href="index.html">← Back</a>
+
+      <h1 class="project-title">
+        Uncertainty <span class="gradient-text">Metrics</span> Lab
+      </h1>
+
+      <p class="project-subtitle">
+        Hands-on lab exploring practical uncertainty signals for multiclass classification:
+        confidence, entropy and ensemble disagreement — plus an operational decision policy.
+      </p>
+
+      <div class="project-cta">
+        <a class="btn btn-solid" href="https://github.com/anaxrdonez/lab-uncertainty-metrics" target="_blank" rel="noopener">
+          GitHub Repo
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/anaxrdonez/lab-uncertainty-metrics/blob/main/notebooks/uncertainty_metrics_lab.ipynb" target="_blank" rel="noopener">
+          Open Notebook
+        </a>
+      </div>
+    </header>
+
+    <!-- Content grid -->
+    <section class="project-grid">
+      <!-- Left: overview -->
+      <article class="project-cardx">
+        <h2>Overview</h2>
+        <p>
+          The goal is to understand how uncertainty behaves across predictions and how to convert it
+          into simple decisions: automate, guide the user, or escalate for human review.
+        </p>
+
+        <div class="project-tags">
+          <span class="ptag">ML Reliability</span>
+          <span class="ptag">Uncertainty</span>
+          <span class="ptag">Jupyter</span>
+          <span class="ptag">Decision Policy</span>
+        </div>
+      </article>
+
+      <!-- Right: key items -->
+      <article class="project-cardx">
+        <h2>What’s inside</h2>
+        <ul class="project-list">
+          <li><strong>Top-1 confidence</strong> analysis and failure modes.</li>
+          <li><strong>Normalized Shannon entropy</strong> scaled to <code>[0,1]</code>.</li>
+          <li><strong>Ensemble variability</strong> via disagreement / std signals.</li>
+          <li><strong>Policy</strong>: AUTO / GRAY_ZONE / ESCALATE / GUIDE.</li>
+        </ul>
+      </article>
+
+      <!-- Full width: policy -->
+      <article class="project-cardx project-cardx--wide">
+        <h2>Decision policy (operational)</h2>
+        <div class="policy-grid">
+          <div class="policy-item">
+            <h3>AUTO</h3>
+            <p>High confidence + low entropy + stable ensemble → run automatically.</p>
+          </div>
+          <div class="policy-item">
+            <h3>GRAY ZONE</h3>
+            <p>Medium uncertainty → show options, add clarification prompts, monitor.</p>
+          </div>
+          <div class="policy-item">
+            <h3>ESCALATE</h3>
+            <p>High entropy or high disagreement → send to human review.</p>
+          </div>
+          <div class="policy-item">
+            <h3>GUIDE</h3>
+            <p>Low confidence but consistent pattern → ask targeted questions to disambiguate.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Full width: next steps -->
+      <article class="project-cardx project-cardx--wide">
+        <h2>Next improvements</h2>
+        <ul class="project-list">
+          <li>Add calibration plots (ECE / reliability diagrams).</li>
+          <li>Evaluate on noisy / OOD samples.</li>
+          <li>Turn the policy into a small reusable library function.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="project-footer">
+      <span>© <span id="year"></span> — Portfolio</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

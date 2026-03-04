@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meeting Minutes Generator (LangGraph)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="background-gradient" aria-hidden="true"></div>
+
+  <main class="project-page">
+    <header class="project-hero">
+      <a class="project-back" href="index.html">← Back</a>
+
+      <h1 class="project-title">
+        Meeting Minutes <span class="gradient-text">Generator</span>
+      </h1>
+
+      <p class="project-subtitle">
+        A LangGraph-based workflow that converts meeting transcripts (or audio/video via transcription)
+        into structured minutes: participants, agenda, key topics, action items, minutes and an executive summary.
+      </p>
+
+      <div class="project-cta">
+        <a class="btn btn-solid" href="https://github.com/anaxrdonez/langgraph-meeting-minutes-generator" target="_blank" rel="noopener">
+          GitHub Repo
+        </a>
+      </div>
+    </header>
+
+    <section class="project-grid">
+      <article class="project-cardx">
+        <h2>Overview</h2>
+        <p>
+          This project focuses on reliability and structure: instead of “a summary”, it extracts
+          meeting artifacts that are directly useful for teams — especially action items and decisions.
+        </p>
+
+        <div class="project-tags">
+          <span class="ptag">LangGraph</span>
+          <span class="ptag">LLM</span>
+          <span class="ptag">Structured Output</span>
+          <span class="ptag">Automation</span>
+        </div>
+      </article>
+
+      <article class="project-cardx">
+        <h2>Key outputs</h2>
+        <ul class="project-list">
+          <li><strong>Participants</strong> and roles (when available).</li>
+          <li><strong>Agenda</strong> + meeting structure.</li>
+          <li><strong>Topics</strong> and key discussion points.</li>
+          <li><strong>Action items</strong> (owner + deadline when present).</li>
+          <li><strong>Minutes</strong> + <strong>executive summary</strong>.</li>
+        </ul>
+      </article>
+
+      <article class="project-cardx project-cardx--wide">
+        <h2>Workflow</h2>
+        <ul class="project-list">
+          <li><strong>Input</strong>: transcript (paste text) or audio/video (transcribe first).</li>
+          <li><strong>LangGraph orchestration</strong>: step-by-step extraction nodes.</li>
+          <li><strong>Validation</strong>: enforce schema and formatting for consistent outputs.</li>
+          <li><strong>Export</strong>: results ready for docs, tickets or follow-up emails.</li>
+        </ul>
+      </article>
+
+      <article class="project-cardx project-cardx--wide">
+        <h2>Why LangGraph</h2>
+        <ul class="project-list">
+          <li>Modular nodes → easy to iterate (e.g., add “Decisions” or “Risks”).</li>
+          <li>Stateful workflow → predictable order and intermediate checkpoints.</li>
+          <li>Better control than a single long prompt.</li>
+        </ul>
+      </article>
+
+      <article class="project-cardx project-cardx--wide">
+        <h2>Next improvements</h2>
+        <ul class="project-list">
+          <li>Web UI (Streamlit / FastAPI) for a public demo.</li>
+          <li>Calendar/ticket integrations (Jira/Trello) from action items.</li>
+          <li>Speaker diarization support to strengthen participant extraction.</li>
+          <li>Cost & latency optimizations (chunking + caching).</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="project-footer">
+      <span>© <span id="year"></span> — Portfolio</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

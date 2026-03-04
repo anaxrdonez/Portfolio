@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV Evaluator (LLM)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="background-gradient" aria-hidden="true"></div>
+
+  <main class="project-page">
+    <header class="project-hero">
+      <a class="project-back" href="index.html">← Back</a>
+
+      <h1 class="project-title">
+        CV Evaluator <span class="gradient-text">LLM</span>
+      </h1>
+
+      <p class="project-subtitle">
+        An LLM pipeline that evaluates resumes against a role, generates structured feedback,
+        surfaces missing signals, and suggests improvements with consistent scoring.
+      </p>
+
+      <div class="project-cta">
+        <a class="btn btn-solid" href="https://github.com/anaxrdonez/cv-evaluator-llm" target="_blank" rel="noopener">
+          GitHub Repo
+        </a>
+      </div>
+    </header>
+
+    <section class="project-grid">
+      <article class="project-cardx">
+        <h2>Overview</h2>
+        <p>
+          This project focuses on building a practical evaluator that outputs actionable,
+          structured results rather than vague “AI feedback”. It’s designed to be extended
+          into a web tool or internal HR assistant.
+        </p>
+
+        <div class="project-tags">
+          <span class="ptag">LLM</span>
+          <span class="ptag">Structured Output</span>
+          <span class="ptag">Evaluation</span>
+          <span class="ptag">Prompting</span>
+        </div>
+      </article>
+
+      <article class="project-cardx">
+        <h2>Key outputs</h2>
+        <ul class="project-list">
+          <li><strong>Fit score</strong> and rationale aligned to the role.</li>
+          <li><strong>Strengths</strong> and <strong>gaps</strong> (missing signals).</li>
+          <li><strong>Recommendations</strong> to improve the CV for the target job.</li>
+          <li><strong>Structured JSON</strong> (easy to integrate into apps).</li>
+        </ul>
+      </article>
+
+      <article class="project-cardx project-cardx--wide">
+        <h2>How it works</h2>
+        <ul class="project-list">
+          <li>Input: CV text + job description (or role requirements).</li>
+          <li>Normalization: extract key sections and entities (skills, experience, education).</li>
+          <li>Evaluation: criteria-based scoring with calibrated explanations.</li>
+          <li>Output: formatted report + JSON schema for automation.</li>
+        </ul>
+      </article>
+
+      <article class="project-cardx project-cardx--wide">
+        <h2>Next improvements</h2>
+        <ul class="project-list">
+          <li>Add rubric tuning per industry (SWE, Data, Product, etc.).</li>
+          <li>Bias & safety layer: avoid sensitive inference; focus on job-relevant content.</li>
+          <li>Optional: RAG with role-specific standards (competency frameworks).</li>
+          <li>Deploy a minimal web demo (Streamlit / FastAPI).</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="project-footer">
+      <span>© <span id="year"></span> — Portfolio</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
