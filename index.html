@@ -47,11 +47,12 @@
     <div class="background-gradient"></div>
     <div class="hero-content" data-aos="fade-up">
       <h1 class="display-3 fw-bold mb-3 gradient-text" data-i18n="hero.title">Ana Ordóñez</h1>
-      <h2 class="changing-text">
-        <span data-i18n="hero.words.1">Diseño.</span>
-        <span data-i18n="hero.words.2">Desarrollo.</span>
-        <span data-i18n="hero.words.3">Creatividad.</span>
-      </h2>
+        <h2 class="changing-text">
+          <span data-i18n="hero.words.1">Diseño.</span>
+          <span data-i18n="hero.words.2">Desarrollo.</span>
+          <span data-i18n="hero.words.3">Creatividad.</span>
+          <span data-i18n="hero.words.4">Automatización.</span>
+        </h2>
       <a href="#projects" class="btn btn-primary mt-4" data-i18n="hero.cta">Ver Proyectos</a>
     </div>
   </header>
@@ -70,23 +71,66 @@
         <!-- Texto -->
         <div class="col-md-7">
           <h2 class="section-title mb-3" data-i18n="about.title">Sobre Mí</h2>
-          <p class="lead about-text" data-i18n="about.body">
-            Soy <strong>Ana Ordóñez Gragera</strong>, tengo <strong>23 años</strong> y he completado la carrera de
-            <strong>Diseño y Desarrollo de Videojuegos</strong> en la Universidad Rey Juan Carlos.
-            Mi pasión por los videojuegos y la animación 3D me ha llevado a desarrollar proyectos que abarcan
-            desde un <em>Arkanoid</em> en ensamblador hasta un multijugador online de carreras,
-            pasando por animaciones, simulaciones físicas y concept art.
+          <p class="lead about-text">
+          Soy <strong>Ana Ordóñez Gragera</strong>, tengo <strong>23 años</strong> y he completado el grado en 
+          <strong>Diseño y Desarrollo de Videojuegos</strong> en la Universidad Rey Juan Carlos. 
+          Actualmente estoy cursando un <strong>Máster en Inteligencia Artificial</strong> en la Universidad Politécnica de Madrid.
+
+          Mi interés principal se centra en el desarrollo de <strong>soluciones basadas en inteligencia artificial</strong>, 
+          la experimentación con modelos y el desarrollo de herramientas utilizando <strong>Python</strong>. 
+          Disfruto combinando programación, creatividad y resolución de problemas para construir proyectos que van desde 
+          <strong>videojuegos y prototipos interactivos</strong> hasta aplicaciones y sistemas experimentales de IA.
+
+          Me interesa especialmente explorar áreas como <strong>machine learning, procesamiento de datos y desarrollo de aplicaciones inteligentes</strong>, 
+          aplicando la programación y el pensamiento computacional para crear soluciones innovadoras.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-
   <!-- Proyectos -->
   <section id="projects" class="section" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title mb-5" data-i18n="projects.title">Proyectos Destacados</h2>
+    <div class="container">
+
+      <div class="text-center">
+        <h2 class="section-title mb-5">Proyectos</h2>
+      </div>
+
+      <!-- ========================= -->
+      <!-- GRID 1: IA -->
+      <!-- ========================= -->
+      <div class="d-flex align-items-baseline justify-content-between flex-wrap gap-2 mb-3">
+        <h3 class="mb-0">IA</h3>
+        <!-- opcional: mini texto -->
+        <!-- <small class="text-muted">Próximamente</small> -->
+      </div>
+
+      <div class="row g-4">
+        <!-- Aquí irán tus proyectos de IA (cards) -->
+        <!-- Ejemplo de card (cuando quieras):
+        <div class="col-md-4">
+          <a href="..." class="project-card">
+            <img src="Assets/..." alt="..." />
+            <div class="project-info">
+              <h3>Nombre</h3>
+              <p>Descripción</p>
+            </div>
+          </a>
+        </div>
+        -->
+      </div>
+
+      <!-- Separador visual entre grids -->
+      <hr class="my-5" style="border-color: rgba(255,255,255,.12);" />
+
+      <!-- ========================= -->
+      <!-- GRID 2: JUEGOS -->
+      <!-- ========================= -->
+      <div class="d-flex align-items-baseline justify-content-between flex-wrap gap-2 mb-3">
+        <h3 class="mb-0">Juegos</h3>
+      </div>
+
       <div class="row g-4">
         <!-- Big Little Ranch -->
         <div class="col-md-4">
@@ -171,19 +215,19 @@
           </a>
         </div>
       </div>
+
     </div>
   </section>
 
-    <!-- Tecnologías y Lenguajes -->
-    <section id="skills" class="section" data-aos="fade-up">
+  <!-- Tecnologías y Lenguajes -->
+  <section id="skills" class="section" data-aos="fade-up">
     <div class="container text-center">
-        <h2 class="section-title" data-i18n="skills.title">Tecnologías y Lenguajes</h2>
-        <p class="mb-5" data-i18n="skills.subtitle">
+      <h2 class="section-title" data-i18n="skills.title">Tecnologías y Lenguajes</h2>
+      <p class="mb-5" data-i18n="skills.subtitle">
         Lenguajes, motores y herramientas que utilizo habitualmente
-        </p>
+      </p>
 
-        <div class="skills-logos d-flex flex-wrap justify-content-center align-items-center gap-4">
-
+      <div class="skills-logos d-flex flex-wrap justify-content-center align-items-center gap-4">
         <!-- Lenguajes -->
         <img src="https://cdn.jsdelivr.net/npm/simple-icons@9.20.0/icons/csharp.svg" alt="C#" class="skill-logo" />
         <img src="https://cdn.jsdelivr.net/npm/simple-icons@9.20.0/icons/cplusplus.svg" alt="C++" class="skill-logo" />
@@ -210,93 +254,93 @@
 
         <!-- Procreate (SVG inline minimalista) -->
         <svg class="skill-logo" viewBox="0 0 64 64" role="img" aria-label="Procreate">
-            <defs>
+          <defs>
             <linearGradient id="procreateGrad" x1="0" y1="1" x2="1" y2="0">
-                <stop offset="0%" stop-color="#6c63ff"/>
-                <stop offset="100%" stop-color="#ff3cac"/>
+              <stop offset="0%" stop-color="#6c63ff"/>
+              <stop offset="100%" stop-color="#ff3cac"/>
             </linearGradient>
-            </defs>
-            <rect x="6" y="6" width="52" height="52" rx="12" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4"/>
-            <path d="M18 40 C 30 36, 36 22, 48 18" fill="none" stroke="url(#procreateGrad)" stroke-width="5" stroke-linecap="round"/>
+          </defs>
+          <rect x="6" y="6" width="52" height="52" rx="12" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4"/>
+          <path d="M18 40 C 30 36, 36 22, 48 18" fill="none" stroke="url(#procreateGrad)" stroke-width="5" stroke-linecap="round"/>
         </svg>
+
         <img src="Assets/NomadLogo.png" alt="Nomad Sculpt" class="skill-logo skill-logo--light" />
-        </div>
+      </div>
     </div>
-    </section>
+  </section>
 
-    <!-- Timeline (simple rail + dots) -->
-    <section id="timeline" class="section">
+  <!-- Timeline (simple rail + dots) -->
+  <section id="timeline" class="section">
     <div class="container">
-        <h2 class="section-title text-center mb-5" data-i18n="timeline.title">My journey</h2>
+      <h2 class="section-title text-center mb-5" data-i18n="timeline.title">My journey</h2>
 
-        <ol class="tl">
+      <ol class="tl">
         <!-- Row 1 -->
         <li class="tl-row">
-            <div class="tl-left">
+          <div class="tl-left">
             <article class="tl-card">
-                <h3 data-i18n="timeline.1.title">2018–2020 · Bachillerato Tecnológico</h3>
-                <p  data-i18n="timeline.1.desc">IES Rodríguez Moñino, Badajoz (ES).</p>
+              <h3 data-i18n="timeline.1.title">2018–2020 · Bachillerato Tecnológico</h3>
+              <p data-i18n="timeline.1.desc">IES Rodríguez Moñino, Badajoz (ES).</p>
             </article>
-            </div>
+          </div>
 
-            <div class="tl-rail" aria-hidden="true">
+          <div class="tl-rail" aria-hidden="true">
             <span class="tl-dot"></span>
-            </div>
+          </div>
 
-            <div class="tl-right"></div>
+          <div class="tl-right"></div>
         </li>
 
         <!-- Row 2 -->
         <li class="tl-row">
-            <div class="tl-left"></div>
+          <div class="tl-left"></div>
 
-            <div class="tl-rail" aria-hidden="true">
+          <div class="tl-rail" aria-hidden="true">
             <span class="tl-dot"></span>
-            </div>
+          </div>
 
-            <div class="tl-right">
+          <div class="tl-right">
             <article class="tl-card">
-                <h3 data-i18n="timeline.2.title">2021–2025 · Grado en Diseño y Desarrollo de Videojuegos</h3>
-                <p  data-i18n="timeline.2.desc">Universidad Rey Juan Carlos (URJC). Carrera finalizada.</p>
+              <h3 data-i18n="timeline.2.title">2021–2025 · Grado en Diseño y Desarrollo de Videojuegos</h3>
+              <p data-i18n="timeline.2.desc">Universidad Rey Juan Carlos (URJC). Carrera finalizada.</p>
             </article>
-            </div>
+          </div>
         </li>
 
         <!-- Row 3 -->
         <li class="tl-row">
-            <div class="tl-left">
+          <div class="tl-left">
             <article class="tl-card">
-                <h3 data-i18n="timeline.3.title">2025 · Máster en Inteligencia Artificial</h3>
-                <p  data-i18n="timeline.3.desc">Universidad Politécnica de Madrid (UPM).</p>
+              <h3 data-i18n="timeline.3.title">2025 · Máster en Inteligencia Artificial</h3>
+              <p data-i18n="timeline.3.desc">Universidad Politécnica de Madrid (UPM).</p>
             </article>
-            </div>
+          </div>
 
-            <div class="tl-rail" aria-hidden="true">
+          <div class="tl-rail" aria-hidden="true">
             <span class="tl-dot"></span>
-            </div>
+          </div>
 
-            <div class="tl-right"></div>
+          <div class="tl-right"></div>
         </li>
 
         <!-- Row 4 -->
         <li class="tl-row">
-            <div class="tl-left"></div>
+          <div class="tl-left"></div>
 
-            <div class="tl-rail" aria-hidden="true">
+          <div class="tl-rail" aria-hidden="true">
             <span class="tl-dot"></span>
-            </div>
+          </div>
 
-            <div class="tl-right">
+          <div class="tl-right">
             <article class="tl-card">
-                <h3 data-i18n="timeline.4.title">2025 · Workplace Engineering Intern</h3>
-                <p  data-i18n="timeline.4.desc">Avanade Spain — soporte a usuarios, DX y flujos.</p>
+              <h3 data-i18n="timeline.4.title">2025 · Workplace Engineering Intern</h3>
+              <p data-i18n="timeline.4.desc">Avanade Spain — soporte a usuarios, DX y flujos.</p>
             </article>
-            </div>
+          </div>
         </li>
-        </ol>
+      </ol>
     </div>
-    </section>
-
+  </section>
 
   <!-- Contacto -->
   <section id="contact" class="section contact" data-aos="fade-up">

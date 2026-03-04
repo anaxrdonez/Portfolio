@@ -66,35 +66,36 @@ body {
 /* ===== Texto animado bajo el nombre ===== */
 .hero-content { text-align: center; position: relative; z-index: 2; }
 
-.changing-text {
-  display: block;
+/* 4 palabras: 8s total, slot 2s */
+.changing-text{
   position: relative;
   height: 1.6em;
   line-height: 1.6em;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #c5c8ff;
-  margin: 0 auto;
 }
-.changing-text span {
-  position: absolute;
-  left: 0; right: 0;
-  width: 100%;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(100%);
-  animation: rotateText 6s infinite;
+
+.changing-text span{
+  animation: rotateText 8s infinite;
+  animation-fill-mode: both;
 }
+
 .changing-text span:nth-child(1){ animation-delay: 0s; }
 .changing-text span:nth-child(2){ animation-delay: 2s; }
 .changing-text span:nth-child(3){ animation-delay: 4s; }
-@keyframes rotateText {
-  0%   { opacity: 0; transform: translateY(100%); }
-  5%   { opacity: 1; transform: translateY(0); }
-  30%  { opacity: 1; transform: translateY(0); }
-  35%  { opacity: 0; transform: translateY(-100%); }
-  100% { opacity: 0; transform: translateY(-100%); }
+.changing-text span:nth-child(4){ animation-delay: 6s; }
+
+@keyframes rotateText{
+  /* Entra */
+  0%   { opacity: 0; transform: translateY(120%); }
+  12%  { opacity: 1; transform: translateY(0); }
+
+  /* Se mantiene un poco */
+  45%  { opacity: 1; transform: translateY(0); }
+
+  /* Sale “empujada” y desaparece ANTES del final del slot */
+  60%  { opacity: 0; transform: translateY(-120%); }
+
+  /* Permanece apagada para no solapar con la siguiente */
+  100% { opacity: 0; transform: translateY(-120%); }
 }
 
 /* === Sobre mí (foto con fondo blanco) === */
