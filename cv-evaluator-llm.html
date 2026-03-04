@@ -3,37 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CV Evaluator (LLM)</title>
+  <title data-i18n="cv.page.title">CV Evaluator (LLM)</title>
+
+  <!-- Bootstrap (necesario para el navbar/toggler) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <!-- Header compartido -->
+  <div data-include="partials/header.html"></div>
+
   <div class="background-gradient" aria-hidden="true"></div>
 
   <main class="project-page">
     <header class="project-hero">
-      <a class="project-back" href="index.html">← Back</a>
+      <a class="project-back" href="index.html#projects" data-i18n="project.back">← Back</a>
 
       <h1 class="project-title">
-        CV Evaluator <span class="gradient-text">LLM</span>
+        <span data-i18n="cv.hero.title.prefix">CV</span>
+        <span class="gradient-text" data-i18n="cv.hero.title.accent">Evaluator</span>
+        <span data-i18n="cv.hero.title.suffix">LLM</span>
       </h1>
 
-      <p class="project-subtitle">
+      <p class="project-subtitle" data-i18n="cv.hero.subtitle">
         An LLM pipeline that evaluates resumes against a role, generates structured feedback,
         surfaces missing signals, and suggests improvements with consistent scoring.
       </p>
 
       <div class="project-cta">
-        <a class="btn btn-solid" href="https://github.com/anaxrdonez/cv-evaluator-llm" target="_blank" rel="noopener">
-          GitHub Repo
-        </a>
+        <a class="btn btn-solid"
+           href="https://github.com/anaxrdonez/cv-evaluator-llm"
+           target="_blank" rel="noopener"
+           data-i18n="project.repo">GitHub Repo</a>
       </div>
     </header>
 
     <section class="project-grid">
       <article class="project-cardx">
-        <h2>Overview</h2>
-        <p>
+        <h2 data-i18n="cv.overview.title">Overview</h2>
+        <p data-i18n="cv.overview.body">
           This project focuses on building a practical evaluator that outputs actionable,
           structured results rather than vague “AI feedback”. It’s designed to be extended
           into a web tool or internal HR assistant.
@@ -48,32 +58,32 @@
       </article>
 
       <article class="project-cardx">
-        <h2>Key outputs</h2>
+        <h2 data-i18n="cv.outputs.title">Key outputs</h2>
         <ul class="project-list">
-          <li><strong>Fit score</strong> and rationale aligned to the role.</li>
-          <li><strong>Strengths</strong> and <strong>gaps</strong> (missing signals).</li>
-          <li><strong>Recommendations</strong> to improve the CV for the target job.</li>
-          <li><strong>Structured JSON</strong> (easy to integrate into apps).</li>
+          <li data-i18n="cv.outputs.li1"><strong>Fit score</strong> and rationale aligned to the role.</li>
+          <li data-i18n="cv.outputs.li2"><strong>Strengths</strong> and <strong>gaps</strong> (missing signals).</li>
+          <li data-i18n="cv.outputs.li3"><strong>Recommendations</strong> to improve the CV for the target job.</li>
+          <li data-i18n="cv.outputs.li4"><strong>Structured JSON</strong> (easy to integrate into apps).</li>
         </ul>
       </article>
 
       <article class="project-cardx project-cardx--wide">
-        <h2>How it works</h2>
+        <h2 data-i18n="cv.how.title">How it works</h2>
         <ul class="project-list">
-          <li>Input: CV text + job description (or role requirements).</li>
-          <li>Normalization: extract key sections and entities (skills, experience, education).</li>
-          <li>Evaluation: criteria-based scoring with calibrated explanations.</li>
-          <li>Output: formatted report + JSON schema for automation.</li>
+          <li data-i18n="cv.how.li1">Input: CV text + job description (or role requirements).</li>
+          <li data-i18n="cv.how.li2">Normalization: extract key sections and entities (skills, experience, education).</li>
+          <li data-i18n="cv.how.li3">Evaluation: criteria-based scoring with calibrated explanations.</li>
+          <li data-i18n="cv.how.li4">Output: formatted report + JSON schema for automation.</li>
         </ul>
       </article>
 
       <article class="project-cardx project-cardx--wide">
-        <h2>Next improvements</h2>
+        <h2 data-i18n="cv.next.title">Next improvements</h2>
         <ul class="project-list">
-          <li>Add rubric tuning per industry (SWE, Data, Product, etc.).</li>
-          <li>Bias & safety layer: avoid sensitive inference; focus on job-relevant content.</li>
-          <li>Optional: RAG with role-specific standards (competency frameworks).</li>
-          <li>Deploy a minimal web demo (Streamlit / FastAPI).</li>
+          <li data-i18n="cv.next.li1">Add rubric tuning per industry (SWE, Data, Product, etc.).</li>
+          <li data-i18n="cv.next.li2">Bias &amp; safety layer: avoid sensitive inference; focus on job-relevant content.</li>
+          <li data-i18n="cv.next.li3">Optional: RAG with role-specific standards (competency frameworks).</li>
+          <li data-i18n="cv.next.li4">Deploy a minimal web demo (Streamlit / FastAPI).</li>
         </ul>
       </article>
     </section>
@@ -83,6 +93,9 @@
     </footer>
   </main>
 
+  <!-- Bootstrap bundle (toggler) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>

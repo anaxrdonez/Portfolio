@@ -3,28 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meeting Minutes Generator (LangGraph)</title>
+  <title data-i18n="mm.page.title">Meeting Minutes Generator (LangGraph)</title>
+
+  <!-- Bootstrap (necesario para navbar/toggler) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <!-- Header compartido -->
+  <div data-include="partials/header.html"></div>
+
   <div class="background-gradient" aria-hidden="true"></div>
 
   <main class="project-page">
     <header class="project-hero">
-      <a class="project-back" href="index.html">← Back</a>
+      <a class="project-back" href="index.html#projects" data-i18n="project.back">← Back</a>
 
       <h1 class="project-title">
-        Meeting Minutes <span class="gradient-text">Generator</span>
+        <span data-i18n="mm.hero.title.prefix">Meeting Minutes</span>
+        <span class="gradient-text" data-i18n="mm.hero.title.accent">Generator</span>
+        <span data-i18n="mm.hero.title.suffix"></span>
       </h1>
 
-      <p class="project-subtitle">
+      <p class="project-subtitle" data-i18n="mm.hero.subtitle">
         A LangGraph-based workflow that converts meeting transcripts (or audio/video via transcription)
         into structured minutes: participants, agenda, key topics, action items, minutes and an executive summary.
       </p>
 
       <div class="project-cta">
-        <a class="btn btn-solid" href="https://github.com/anaxrdonez/langgraph-meeting-minutes-generator" target="_blank" rel="noopener">
+        <a
+          class="btn btn-solid"
+          href="https://github.com/anaxrdonez/langgraph-meeting-minutes-generator"
+          target="_blank"
+          rel="noopener"
+          data-i18n="project.repo"
+        >
           GitHub Repo
         </a>
       </div>
@@ -32,8 +47,8 @@
 
     <section class="project-grid">
       <article class="project-cardx">
-        <h2>Overview</h2>
-        <p>
+        <h2 data-i18n="mm.overview.title">Overview</h2>
+        <p data-i18n="mm.overview.body">
           This project focuses on reliability and structure: instead of “a summary”, it extracts
           meeting artifacts that are directly useful for teams — especially action items and decisions.
         </p>
@@ -47,42 +62,42 @@
       </article>
 
       <article class="project-cardx">
-        <h2>Key outputs</h2>
+        <h2 data-i18n="mm.outputs.title">Key outputs</h2>
         <ul class="project-list">
-          <li><strong>Participants</strong> and roles (when available).</li>
-          <li><strong>Agenda</strong> + meeting structure.</li>
-          <li><strong>Topics</strong> and key discussion points.</li>
-          <li><strong>Action items</strong> (owner + deadline when present).</li>
-          <li><strong>Minutes</strong> + <strong>executive summary</strong>.</li>
+          <li data-i18n="mm.outputs.li1"><strong>Participants</strong> and roles (when available).</li>
+          <li data-i18n="mm.outputs.li2"><strong>Agenda</strong> + meeting structure.</li>
+          <li data-i18n="mm.outputs.li3"><strong>Topics</strong> and key discussion points.</li>
+          <li data-i18n="mm.outputs.li4"><strong>Action items</strong> (owner + deadline when present).</li>
+          <li data-i18n="mm.outputs.li5"><strong>Minutes</strong> + <strong>executive summary</strong>.</li>
         </ul>
       </article>
 
       <article class="project-cardx project-cardx--wide">
-        <h2>Workflow</h2>
+        <h2 data-i18n="mm.flow.title">Workflow</h2>
         <ul class="project-list">
-          <li><strong>Input</strong>: transcript (paste text) or audio/video (transcribe first).</li>
-          <li><strong>LangGraph orchestration</strong>: step-by-step extraction nodes.</li>
-          <li><strong>Validation</strong>: enforce schema and formatting for consistent outputs.</li>
-          <li><strong>Export</strong>: results ready for docs, tickets or follow-up emails.</li>
+          <li data-i18n="mm.flow.li1"><strong>Input</strong>: transcript (paste text) or audio/video (transcribe first).</li>
+          <li data-i18n="mm.flow.li2"><strong>LangGraph orchestration</strong>: step-by-step extraction nodes.</li>
+          <li data-i18n="mm.flow.li3"><strong>Validation</strong>: enforce schema and formatting for consistent outputs.</li>
+          <li data-i18n="mm.flow.li4"><strong>Export</strong>: results ready for docs, tickets or follow-up emails.</li>
         </ul>
       </article>
 
       <article class="project-cardx project-cardx--wide">
-        <h2>Why LangGraph</h2>
+        <h2 data-i18n="mm.why.title">Why LangGraph</h2>
         <ul class="project-list">
-          <li>Modular nodes → easy to iterate (e.g., add “Decisions” or “Risks”).</li>
-          <li>Stateful workflow → predictable order and intermediate checkpoints.</li>
-          <li>Better control than a single long prompt.</li>
+          <li data-i18n="mm.why.li1">Modular nodes → easy to iterate (e.g., add “Decisions” or “Risks”).</li>
+          <li data-i18n="mm.why.li2">Stateful workflow → predictable order and intermediate checkpoints.</li>
+          <li data-i18n="mm.why.li3">Better control than a single long prompt.</li>
         </ul>
       </article>
 
       <article class="project-cardx project-cardx--wide">
-        <h2>Next improvements</h2>
+        <h2 data-i18n="mm.next.title">Next improvements</h2>
         <ul class="project-list">
-          <li>Web UI (Streamlit / FastAPI) for a public demo.</li>
-          <li>Calendar/ticket integrations (Jira/Trello) from action items.</li>
-          <li>Speaker diarization support to strengthen participant extraction.</li>
-          <li>Cost & latency optimizations (chunking + caching).</li>
+          <li data-i18n="mm.next.li1">Web UI (Streamlit / FastAPI) for a public demo.</li>
+          <li data-i18n="mm.next.li2">Calendar/ticket integrations (Jira/Trello) from action items.</li>
+          <li data-i18n="mm.next.li3">Speaker diarization support to strengthen participant extraction.</li>
+          <li data-i18n="mm.next.li4">Cost & latency optimizations (chunking + caching).</li>
         </ul>
       </article>
     </section>
@@ -92,6 +107,10 @@
     </footer>
   </main>
 
+  <!-- Bootstrap bundle (toggler) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="app.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
